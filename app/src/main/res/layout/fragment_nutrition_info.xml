@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/healthy_foods"
+                android:textSize="20sp"
+                tools:text="Healthy"
+                android:layout_gravity="center"/>
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="384dp"
+                android:layout_height="390dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:background="@color/green">
+
+
+                <TableRow>
+
+                    <ImageView
+                        android:id="@+id/ingredient1"
+                        android:layout_width="50dp"
+                        android:layout_height="187dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/red_lentils" />
+
+                    <ImageView
+                        android:id="@+id/ingredient2"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/garlic" />
+
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:id="@+id/ingredient3"
+                        android:layout_width="191dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/potatoes" />
+
+                    <ImageView
+                        android:id="@+id/ingredient4"
+                        android:layout_width="177dp"
+                        android:layout_height="187dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/red_chili" />
+                </TableRow>
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/divider2"
+                android:layout_width="350dp"
+                android:layout_height="3dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="9dp"
+                app:srcCompat="@drawable/divider" />
+
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="159dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="170dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="171dp"
+                android:textAlignment="center"
+                android:text="@string/unhealthy_foods"
+                android:textSize="20sp"
+                tools:text="Unhealthy" />
+
+            <TableLayout
+                android:id="@+id/tableLayout1"
+                android:layout_width="384dp"
+                android:layout_height="390dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="150dp"
+                android:background="@color/green">
+
+
+                <TableRow>
+
+                    <ImageView
+                        android:id="@+id/ingredient5"
+                        android:layout_width="50dp"
+                        android:layout_height="187dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/fried_chicken" />
+
+                    <ImageView
+                        android:id="@+id/ingredient6"
+                        android:layout_width="20dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/fried_potatoes" />
+                </TableRow>
+
+                <TableRow>
+
+                    <ImageView
+                        android:id="@+id/ingredient7"
+                        android:layout_width="191dp"
+                        android:layout_height="187dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/chips" />
+
+                    <ImageView
+                        android:id="@+id/ingredient8"
+                        android:layout_width="177dp"
+                        android:layout_height="187dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/noodles" />
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

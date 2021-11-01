@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/recipesFragment">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.sundmadnepal.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.example.sundmadnepal.RecipeFragment"
+        android:label="RecipeFragment" />
+    <fragment
+        android:id="@+id/healthInfoFragment"
+        android:name="com.example.sundmadnepal.HealthInfoFragment"
+        android:label="fragment_health_info"
+        tools:layout="@layout/fragment_health_info" />
+    <fragment
+        android:id="@+id/nutritionInfoFragment"
+        android:name="com.example.sundmadnepal.NutritionInfoFragment"
+        android:label="fragment_nutrition_info"
+        tools:layout="@layout/fragment_nutrition_info" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.sundmadnepal.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.sundmadnepal.RecipiesFragment"
+        android:label="fragment_recipies"
+        tools:layout="@layout/fragment_recipes" />
+</navigation>

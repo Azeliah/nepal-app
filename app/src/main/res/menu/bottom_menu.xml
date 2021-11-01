@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Recipes"
+        android:id="@+id/recipesFragment"
+        android:icon="@drawable/recipes"/>
+    <item android:title="Health info"
+        android:id="@+id/healthInfoFragment"
+        android:icon="@drawable/heart" />
+    <item android:title="Nutrition info"
+        android:id="@+id/nutritionInfoFragment"
+        android:icon="@drawable/apple"/>
+    <item android:title="Quiz"
+        android:id="@+id/quizFragment"
+        android:icon="@drawable/ideas"/>
+</menu>
