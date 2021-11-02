@@ -24,6 +24,9 @@ class MainActivity : AppCompatActivity() {
         // Set always day mode
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
+        // Hide the action bar at the top
+        supportActionBar?.hide();
+
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigationBarBottom)
         val navController = findNavController(R.id.fragment)
 
