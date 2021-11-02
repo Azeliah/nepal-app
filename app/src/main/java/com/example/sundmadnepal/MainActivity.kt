@@ -2,6 +2,7 @@ package com.example.sundmadnepal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = ItemAdapter(this, myDataset)
         recyclerView.setHasFixedSize(true)*/
+
+        // Set always day mode
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigationBarBottom)
         val navController = findNavController(R.id.fragment)
