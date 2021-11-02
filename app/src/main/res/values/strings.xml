@@ -19,5 +19,8 @@
     <string name="unhealthy_foods">अस्वास्थ खाना</string>
     <string name="quiz">हाजिरी जवाफ</string>
     <string name="question">यो मध्य कुन खाना स्वास्थ छ?</string>
+    <string name="recipes">पकाउने समाग्री र तरीका</string>
+    <string name="health_info">स्वास्थ्य जानकारी</string>
+    <string name="nutrition_info">पोषण जानकारी</string>
 
 </resources>
