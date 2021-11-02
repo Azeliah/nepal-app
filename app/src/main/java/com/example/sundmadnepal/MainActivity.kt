@@ -5,9 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.example.sundmadnepal.adapter.ItemAdapter
-import com.example.sundmadnepal.data.Datasource
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -22,10 +19,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)*/
 
         // Set always day mode
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         // Hide the action bar at the top
-        supportActionBar?.hide();
+        supportActionBar?.hide()
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigationBarBottom)
         val navController = findNavController(R.id.fragment)
