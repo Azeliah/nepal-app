@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // This is maybe used when we make the real app
-        /*val myDataset = Datasource().loadRecipies()
+        /*val myDataset = Datasource().loadRecipes()
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.adapter = ItemAdapter(this, myDataset)
         recyclerView.setHasFixedSize(true)*/

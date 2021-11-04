@@ -31,7 +31,7 @@
         tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/recipesFragment"
-        android:name="com.example.sundmadnepal.RecipiesFragment"
-        android:label="fragment_recipies"
+        android:name="com.example.sundmadnepal.RecipesFragment"
+        android:label="fragment_recipes"
         tools:layout="@layout/fragment_recipes" />
 </navigation>

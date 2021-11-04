@@ -4,7 +4,7 @@ import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.Recipe
 
 class Datasource {
-    fun loadRecipies(): List<Recipe>{
+    fun loadRecipes(): List<Recipe>{
         return listOf<Recipe>(
             Recipe(R.string.dahl, R.drawable.dahl),
             Recipe(R.string.momo, R.drawable.momo),
