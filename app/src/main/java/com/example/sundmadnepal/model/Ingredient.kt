@@ -13,10 +13,8 @@ data class Ingredient(
     @StringRes val name: Int,
     /* Picture of the ingredient (no constraints yet) */
     @DrawableRes val imageResourceId: Int,
-    /* Measure (optional?) */
-    @StringRes val measure: Int?,
-    /* Unit of measure, consider using enumeration later. */
-    @StringRes val unit: Int,
+    /* Standard unit of measure, consider using enumeration later. */
+    @StringRes val standardUnit: Int,
     /* TODO: Consider audio filename format? ingredient_{ID}?
         https://codersguidebook.com/how-to-create-an-android-app/play-sounds-music-android-app */
 )
