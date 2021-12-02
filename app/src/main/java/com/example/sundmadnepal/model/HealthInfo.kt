@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.IntegerRes
 import androidx.annotation.StringRes
 
-data class HealthInfo (
+data class HealthInfo(
     @DrawableRes val comic: Int,
     @StringRes val comicText: Int,
     @IntegerRes val fromAge: Int,
