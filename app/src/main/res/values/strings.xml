@@ -21,8 +21,9 @@
     <string name="health_info">स्वास्थ्य जानकारी</string>
     <string name="nutrition_info">पोषण जानकारी</string>
     <string name="question1">Is this healthy?</string>
-    <string name="yes">Is this healthy?</string>
-    <string name="no">Is this healthy?</string>
+    <string name="yes">हो</string>
+    <string name="no">छैन</string>
+    <string name="nextQuestion">अर्को प्रश्न</string>
 
 
 
