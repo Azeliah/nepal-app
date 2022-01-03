@@ -31,13 +31,11 @@ class RecipesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val recipesAdapter = RecipesAdapter { recipe -> recipeOnClick(recipe) }
-        recipesAdapter.submitList(loadRecipes(resources))
+        recipesAdapter.submitList(loadRecipes())
 
         val recipesListView = view.findViewById<RecyclerView>(R.id.recipes_list)
         recipesListView.adapter = recipesAdapter
         recipesListView.setHasFixedSize(true)
-
-        Log.d(TAG, "onViewCreated called")
     }
 
     private fun recipeOnClick(recipe: Recipe) {

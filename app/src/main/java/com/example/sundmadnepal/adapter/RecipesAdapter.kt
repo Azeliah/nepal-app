@@ -16,7 +16,7 @@ class RecipesAdapter(private val onClick: (Recipe) -> Unit) :
 
     class RecipeViewHolder(itemView: View, val onClick: (Recipe) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
-        private val recipeTextView: TextView = itemView.findViewById(R.id.recipe_title)
+        private val recipeTextView: TextView = itemView.findViewById(R.id.recipe_name)
         private val recipeImageView: ImageView = itemView.findViewById(R.id.recipe_image)
         private var currentRecipe: Recipe? = null
 
@@ -31,7 +31,7 @@ class RecipesAdapter(private val onClick: (Recipe) -> Unit) :
         fun bind(recipe: Recipe) {
             currentRecipe = recipe
 
-            recipeTextView.text = recipe.title
+            recipeTextView.setText(recipe.name)
             recipeImageView.setImageResource(recipe.image ?: R.drawable.dahl)
         }
     }

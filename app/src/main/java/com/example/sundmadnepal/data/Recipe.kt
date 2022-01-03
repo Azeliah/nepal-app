@@ -1,10 +1,12 @@
 package com.example.sundmadnepal.data
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 
 data class Recipe(
     val id: Int,
-    val title: String,
+    @StringRes
+    val name: Int,
     @DrawableRes
     val image: Int?
 
