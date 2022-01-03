@@ -8,7 +8,7 @@ data class Recipe(
     @StringRes
     val name: Int,
     @DrawableRes
-    val image: Int?
-
-    // TODO: Add member variables for the actual recipe
+    val image: Int?,
+    val ingredientList: List<IngredientMeasure>?,
+    val procedure: List<ProcedureStep>?
 )
