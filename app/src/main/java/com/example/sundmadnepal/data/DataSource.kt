@@ -1,6 +1,7 @@
 package com.example.sundmadnepal.data
 
 import com.example.sundmadnepal.R
+import com.example.sundmadnepal.model.Recipe
 
 fun loadRecipes(): List<Recipe> {
 

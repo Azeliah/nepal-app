@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.RecipesAdapter
-import com.example.sundmadnepal.data.Recipe
+import com.example.sundmadnepal.model.Recipe
 import com.example.sundmadnepal.data.loadRecipes
 
 private const val TAG = "RecipesFragment"
