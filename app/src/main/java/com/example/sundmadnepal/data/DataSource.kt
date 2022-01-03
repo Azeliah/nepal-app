@@ -1,15 +1,31 @@
 package com.example.sundmadnepal.data
 
+import android.content.res.Resources
 import com.example.sundmadnepal.R
-import com.example.sundmadnepal.model.Recipe
 
-class Datasource {
-    fun loadRecipes(): List<Recipe>{
-        return listOf<Recipe>(
-            Recipe(R.string.dahl, R.drawable.dahl),
-            Recipe(R.string.momo, R.drawable.momo),
-            Recipe(R.string.fried_chicken, R.drawable.fried_chicken),
-            Recipe(R.string.newari, R.drawable.newarithali)
+fun loadRecipes(resources: Resources): List<Recipe> {
+
+    // This is just dummy data, until we can implement a proper repository for recipe data
+    return listOf(
+        Recipe(
+            id = 1,
+            title = resources.getString(R.string.dahl),
+            image = R.drawable.dahl
+        ),
+        Recipe(
+            id = 2,
+            title = resources.getString(R.string.momo),
+            image = R.drawable.momo
+        ),
+        Recipe(
+            id = 3,
+            title = resources.getString(R.string.newari),
+            image = R.drawable.newarithali
+        ),
+        Recipe(
+            id = 4,
+            title = resources.getString(R.string.fried_chicken),
+            image = R.drawable.fried_chicken
         )
-    }
+    )
 }
