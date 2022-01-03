@@ -8,8 +8,6 @@
     <string name="steps">steps</string>
     <string name="step1">Heat 1 tbsp sesame oil in a wide-based pan with a tight-fitting lid.</string>
     <string name="step2">Add 1 finely chopped red onion and cook over a low heat for 10 mins, stirring occasionally, until softened.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="pregnant">गर्भवती</string>
     <string name="zero_to_six">०-६ महिना</string>
     <string name="six_to_nine">६-९ महिना</string>
@@ -22,5 +20,10 @@
     <string name="recipes">पकाउने समाग्री र तरीका</string>
     <string name="health_info">स्वास्थ्य जानकारी</string>
     <string name="nutrition_info">पोषण जानकारी</string>
+    <string name="question1">Is this healthy?</string>
+    <string name="yes">Is this healthy?</string>
+    <string name="no">Is this healthy?</string>
+
+
 
 </resources>
