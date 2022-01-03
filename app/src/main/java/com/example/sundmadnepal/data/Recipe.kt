@@ -7,4 +7,6 @@ data class Recipe(
     val title: String,
     @DrawableRes
     val image: Int?
+
+    // TODO: Add member variables for the actual recipe
 )
