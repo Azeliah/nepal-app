@@ -14,7 +14,9 @@ import com.example.sundmadnepal.model.QuizQuestion
 
 class QuizFragment : Fragment() {
 
+    // Get questions for the quiz
     private val questions = Datasource().loadQuestions()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -30,6 +32,7 @@ class QuizFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Link to all the elements of the fragment
         var questionText = view.findViewById<TextView>(R.id.quizQuestion)
 
         val questionImage = view.findViewById<ImageView>(R.id.questionImage)
@@ -37,13 +40,20 @@ class QuizFragment : Fragment() {
         val yesButton = view.findViewById<Button>(R.id.yesButton)
         val noButton = view.findViewById<Button>(R.id.noButton)
         val nextButton = view.findViewById<Button>(R.id.nextButton)
-        nextButton.visibility = View.INVISIBLE
 
         val resultText = view.findViewById<TextView>(R.id.resultText)
-        resultText.visibility = View.INVISIBLE
 
+        // Make nextButton and resultText invisible
+        resultText.visibility = View.INVISIBLE
+        nextButton.visibility = View.INVISIBLE
+
+        // Set the current questions text
         var currQuestion = questions.random()
 
+        // Set the text of the first question
+        questionText.text = currQuestion.question
+
+        // Set the image for the question, if it has an image
         if(currQuestion.imageResourceId != null){
             questionImage.visibility = View.VISIBLE
             questionImage.setImageResource(currQuestion.imageResourceId!!)
@@ -52,10 +62,14 @@ class QuizFragment : Fragment() {
             questionImage.visibility = View.INVISIBLE
         }
 
+        // Add functionality to the yesButton
         yesButton.setOnClickListener{
+
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
+
+            // Check if the answer is correct, and set the text and color of the resultText
             if(currQuestion.answer){
                 resultText.text = "Correct"
                 resultText.setTextColor(getResources().getColor(R.color.green))
@@ -68,6 +82,7 @@ class QuizFragment : Fragment() {
             nextButton.visibility = View.VISIBLE
         }
 
+        // Check if the answer is correct, and set the text and color of the resultText
         noButton.setOnClickListener{
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
@@ -84,14 +99,17 @@ class QuizFragment : Fragment() {
             nextButton.visibility = View.VISIBLE
         }
 
+        // Add functionality to the nextButton
         nextButton.setOnClickListener{
             resultText.visibility = View.INVISIBLE
             yesButton.visibility = View.VISIBLE
             noButton.visibility = View.VISIBLE
             nextButton.visibility = View.INVISIBLE
 
+            // Pick a new random question
             currQuestion = questions.random()
 
+            // Update the question text and image
             questionText.text = currQuestion.question
 
             if(currQuestion.imageResourceId != null){
