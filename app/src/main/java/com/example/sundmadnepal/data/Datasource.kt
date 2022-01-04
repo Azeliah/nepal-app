@@ -19,6 +19,7 @@ class Datasource {
         return listOf<QuizQuestion>(
             QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
             QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
+            QuizQuestion("Is it healthy for your child to eat chips", null, false)
         )
     }
 }
