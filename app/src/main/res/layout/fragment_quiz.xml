@@ -14,7 +14,7 @@
         android:layout_marginTop="88dp"
         android:text="@string/yes"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/questionImage"
         tools:visibility="visible" />
 
     <Button
@@ -25,7 +25,7 @@
         android:layout_marginEnd="60dp"
         android:text="@string/no"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/questionImage"
         tools:visibility="visible" />
 
     <Button
@@ -41,7 +41,7 @@
         tools:visibility="visible" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/questionImage"
         android:layout_width="260dp"
         android:layout_height="201dp"
         android:layout_marginTop="15dp"
@@ -78,11 +78,11 @@
         app:layout_constraintTop_toBottomOf="@+id/quizTitle" />
 
     <TextView
-        android:id="@+id/rightOrWrong"
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"
-        android:text="TextView"
+        android:text="Right"
         android:textColor="#20DA27"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
