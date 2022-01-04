@@ -9,4 +9,6 @@ data class Recipe(
     val name: Int,
     @DrawableRes
     val image: Int?,
+    val stepList : List<String>? = null,
+    val ingredientList : List<Ingredient>? = null,
 )

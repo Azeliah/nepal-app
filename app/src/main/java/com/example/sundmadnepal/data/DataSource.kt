@@ -1,6 +1,7 @@
 package com.example.sundmadnepal.data
 
 import com.example.sundmadnepal.R
+import com.example.sundmadnepal.model.Ingredient
 import com.example.sundmadnepal.model.Recipe
 
 fun loadRecipes(): List<Recipe> {
@@ -26,6 +27,16 @@ fun loadRecipes(): List<Recipe> {
             id = 4,
             name = R.string.fried_chicken,
             image = R.drawable.fried_chicken
+        ),
+        Recipe(
+            id = 5,
+            name = R.string.pumpking_pudding,
+            image = R.drawable.pudding_final,
+            stepList = listOf("Step1: follow the instructions in the image", "Step2: look at the pretty picture"),
+            ingredientList = listOf(
+                Ingredient(R.drawable.pudding_ingredienses_beforemaking,"3 cups of milk"),
+                                    Ingredient(R.drawable.pudding_ingredienses, "Follow the shown picture"))
+
         )
     )
 }

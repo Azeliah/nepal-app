@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.RecipesAdapter
 import com.example.sundmadnepal.model.Recipe
@@ -36,6 +37,8 @@ class RecipesFragment : Fragment() {
 
     private fun recipeOnClick(recipe: Recipe) {
         // TODO: Implement navigating to the recipe activity/fragment
+        val action =RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id)
+        findNavController().navigate(action)
         Log.d(TAG, "Recipe card clicked: $recipe")
     }
 }
