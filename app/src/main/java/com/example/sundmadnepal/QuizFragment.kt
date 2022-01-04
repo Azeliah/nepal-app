@@ -9,13 +9,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.compose.ui.graphics.Color
-import com.example.sundmadnepal.data.Datasource
+import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.QuizQuestion
 
 class QuizFragment : Fragment() {
 
     // Get questions for the quiz
-    private val questions = Datasource().loadQuestions()
+    private val questions = DataSource().loadQuestions()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
