@@ -9,6 +9,4 @@ data class Recipe(
     val name: Int,
     @DrawableRes
     val image: Int?,
-    val ingredientList: List<IngredientMeasure>?,
-    val procedure: List<ProcedureStep>?
 )
