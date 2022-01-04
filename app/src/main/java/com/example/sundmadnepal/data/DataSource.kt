@@ -1,6 +1,7 @@
 package com.example.sundmadnepal.data
 
 import com.example.sundmadnepal.R
+import com.example.sundmadnepal.model.QuizQuestion
 import com.example.sundmadnepal.model.Recipe
 
 fun loadRecipes(): List<Recipe> {
@@ -28,4 +29,14 @@ fun loadRecipes(): List<Recipe> {
             image = R.drawable.fried_chicken
         )
     )
+}
+
+class DataSource{
+    fun loadQuestions(): List<QuizQuestion> {
+        return listOf<QuizQuestion>(
+            QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
+            QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
+            QuizQuestion("Is it healthy for your child to eat chips", null, false)
+        )
+    }
 }
