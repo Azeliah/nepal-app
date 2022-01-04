@@ -12,13 +12,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // This is maybe used when we make the real app
-        /*val myDataset = Datasource().loadRecipes()
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = ItemAdapter(this, myDataset)
-        recyclerView.setHasFixedSize(true)*/
-
         // Set always day mode
+        // FIXME: Modify the night mode styling to be prettier, so we don't have to disable it here
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         // Hide the action bar at the top
