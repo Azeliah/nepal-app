@@ -34,4 +34,9 @@
         android:name="com.example.sundmadnepal.RecipesFragment"
         android:label="fragment_recipes"
         tools:layout="@layout/fragment_recipes" />
+    <fragment
+        android:id="@+id/healthInfoSpecific"
+        android:name="com.example.sundmadnepal.HealthInfoSpecific"
+        android:label="fragment_health_info_specific"
+        tools:layout="@layout/fragment_health_info_specific" />
 </navigation>
