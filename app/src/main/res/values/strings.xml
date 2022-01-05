@@ -24,6 +24,8 @@
     <string name="yes">हो</string>
     <string name="no">छैन</string>
     <string name="nextQuestion">अर्को प्रश्न</string>
+    <string name="correct">Correct</string>
+    <string name="wrong">Wrong</string>
 
 
 

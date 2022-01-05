@@ -70,11 +70,11 @@ class QuizFragment : Fragment() {
 
             // Check if the answer is correct, and set the text and color of the resultText
             if (currQuestion.answer) {
-                resultText.text = "Correct"
-                resultText.setTextColor(getResources().getColor(R.color.green))
+                resultText.text = resources.getText(R.string.correct)
+                resultText.setTextColor(resources.getColor(R.color.green))
             } else {
-                resultText.text = "Wrong"
-                resultText.setTextColor(getResources().getColor(R.color.red))
+                resultText.text = resources.getText(R.string.wrong)
+                resultText.setTextColor(resources.getColor(R.color.red))
             }
 
             nextButton.visibility = View.VISIBLE
@@ -86,11 +86,11 @@ class QuizFragment : Fragment() {
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
             if (!currQuestion.answer) {
-                resultText.text = "Correct"
-                resultText.setTextColor(getResources().getColor(R.color.green))
+                resultText.text = resources.getText(R.string.correct)
+                resultText.setTextColor(resources.getColor(R.color.green))
             } else {
-                resultText.text = "Wrong"
-                resultText.setTextColor(getResources().getColor(R.color.red))
+                resultText.text = resources.getText(R.string.wrong)
+                resultText.setTextColor(resources.getColor(R.color.red))
             }
 
             nextButton.visibility = View.VISIBLE
@@ -115,8 +115,6 @@ class QuizFragment : Fragment() {
             } else {
                 questionImage.visibility = View.INVISIBLE
             }
-
         }
-
     }
 }
