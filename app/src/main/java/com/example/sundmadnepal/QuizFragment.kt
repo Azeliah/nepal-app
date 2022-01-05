@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.ui.graphics.Color
 import com.example.sundmadnepal.data.DataSource
-import com.example.sundmadnepal.model.QuizQuestion
 
 class QuizFragment : Fragment() {
 
