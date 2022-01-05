@@ -32,7 +32,7 @@ fun loadRecipes(): List<Recipe> {
 }
 
 // Dummy data for quiz questions
-class DataSource{
+class DataSource {
     fun loadQuestions(): List<QuizQuestion> {
         return listOf(
             QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),

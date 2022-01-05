@@ -54,27 +54,25 @@ class QuizFragment : Fragment() {
         questionText.text = currQuestion.question
 
         // Set the image for the question, if it has an image
-        if(currQuestion.imageResourceId != null){
+        if (currQuestion.imageResourceId != null) {
             questionImage.visibility = View.VISIBLE
             questionImage.setImageResource(currQuestion.imageResourceId!!)
-        }
-        else{
+        } else {
             questionImage.visibility = View.INVISIBLE
         }
 
         // Add functionality to the yesButton
-        yesButton.setOnClickListener{
+        yesButton.setOnClickListener {
 
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
 
             // Check if the answer is correct, and set the text and color of the resultText
-            if(currQuestion.answer){
+            if (currQuestion.answer) {
                 resultText.text = "Correct"
                 resultText.setTextColor(getResources().getColor(R.color.green))
-            }
-            else{
+            } else {
                 resultText.text = "Wrong"
                 resultText.setTextColor(getResources().getColor(R.color.red))
             }
@@ -83,15 +81,14 @@ class QuizFragment : Fragment() {
         }
 
         // Check if the answer is correct, and set the text and color of the resultText
-        noButton.setOnClickListener{
+        noButton.setOnClickListener {
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
-            if(!currQuestion.answer){
+            if (!currQuestion.answer) {
                 resultText.text = "Correct"
                 resultText.setTextColor(getResources().getColor(R.color.green))
-            }
-            else{
+            } else {
                 resultText.text = "Wrong"
                 resultText.setTextColor(getResources().getColor(R.color.red))
             }
@@ -100,7 +97,7 @@ class QuizFragment : Fragment() {
         }
 
         // Add functionality to the nextButton
-        nextButton.setOnClickListener{
+        nextButton.setOnClickListener {
             resultText.visibility = View.INVISIBLE
             yesButton.visibility = View.VISIBLE
             noButton.visibility = View.VISIBLE
@@ -112,11 +109,10 @@ class QuizFragment : Fragment() {
             // Update the question text and image
             questionText.text = currQuestion.question
 
-            if(currQuestion.imageResourceId != null){
+            if (currQuestion.imageResourceId != null) {
                 questionImage.visibility = View.VISIBLE
                 questionImage.setImageResource(currQuestion.imageResourceId!!)
-            }
-            else{
+            } else {
                 questionImage.visibility = View.INVISIBLE
             }
 
