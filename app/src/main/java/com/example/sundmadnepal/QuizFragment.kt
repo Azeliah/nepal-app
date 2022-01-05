@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.compose.ui.graphics.Color
 import com.example.sundmadnepal.data.DataSource
-import com.example.sundmadnepal.model.QuizQuestion
 
 class QuizFragment : Fragment() {
 
@@ -54,53 +52,50 @@ class QuizFragment : Fragment() {
         questionText.text = currQuestion.question
 
         // Set the image for the question, if it has an image
-        if(currQuestion.imageResourceId != null){
+        if (currQuestion.imageResourceId != null) {
             questionImage.visibility = View.VISIBLE
             questionImage.setImageResource(currQuestion.imageResourceId!!)
-        }
-        else{
+        } else {
             questionImage.visibility = View.INVISIBLE
         }
 
         // Add functionality to the yesButton
-        yesButton.setOnClickListener{
+        yesButton.setOnClickListener {
 
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
 
             // Check if the answer is correct, and set the text and color of the resultText
-            if(currQuestion.answer){
-                resultText.text = "Correct"
-                resultText.setTextColor(getResources().getColor(R.color.green))
-            }
-            else{
-                resultText.text = "Wrong"
-                resultText.setTextColor(getResources().getColor(R.color.red))
+            if (currQuestion.answer) {
+                resultText.text = resources.getText(R.string.correct)
+                resultText.setTextColor(resources.getColor(R.color.green))
+            } else {
+                resultText.text = resources.getText(R.string.wrong)
+                resultText.setTextColor(resources.getColor(R.color.red))
             }
 
             nextButton.visibility = View.VISIBLE
         }
 
         // Check if the answer is correct, and set the text and color of the resultText
-        noButton.setOnClickListener{
+        noButton.setOnClickListener {
             resultText.visibility = View.VISIBLE
             yesButton.visibility = View.INVISIBLE
             noButton.visibility = View.INVISIBLE
-            if(!currQuestion.answer){
-                resultText.text = "Correct"
-                resultText.setTextColor(getResources().getColor(R.color.green))
-            }
-            else{
-                resultText.text = "Wrong"
-                resultText.setTextColor(getResources().getColor(R.color.red))
+            if (!currQuestion.answer) {
+                resultText.text = resources.getText(R.string.correct)
+                resultText.setTextColor(resources.getColor(R.color.green))
+            } else {
+                resultText.text = resources.getText(R.string.wrong)
+                resultText.setTextColor(resources.getColor(R.color.red))
             }
 
             nextButton.visibility = View.VISIBLE
         }
 
         // Add functionality to the nextButton
-        nextButton.setOnClickListener{
+        nextButton.setOnClickListener {
             resultText.visibility = View.INVISIBLE
             yesButton.visibility = View.VISIBLE
             noButton.visibility = View.VISIBLE
@@ -112,15 +107,12 @@ class QuizFragment : Fragment() {
             // Update the question text and image
             questionText.text = currQuestion.question
 
-            if(currQuestion.imageResourceId != null){
+            if (currQuestion.imageResourceId != null) {
                 questionImage.visibility = View.VISIBLE
                 questionImage.setImageResource(currQuestion.imageResourceId!!)
-            }
-            else{
+            } else {
                 questionImage.visibility = View.INVISIBLE
             }
-
         }
-
     }
 }
