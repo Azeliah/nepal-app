@@ -22,5 +22,6 @@
     <string name="recipes">पकाउने समाग्री र तरीका</string>
     <string name="health_info">स्वास्थ्य जानकारी</string>
     <string name="nutrition_info">पोषण जानकारी</string>
+    <string name="general_information">सामान्य जानकारी</string>
 
 </resources>
