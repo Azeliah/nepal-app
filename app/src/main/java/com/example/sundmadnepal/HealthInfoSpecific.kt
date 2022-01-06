@@ -27,7 +27,7 @@ class HealthInfoSpecific : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val linLayout : LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
+        val linLayout: LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
 
         val view1 = newTextView(resources.getString(R.string.zeroToSix1), view.context)
         val view2 = newTextView(resources.getString(R.string.zeroToSix2), view.context)
@@ -42,14 +42,15 @@ class HealthInfoSpecific : Fragment() {
 
     }
 
-
-    fun newTextView(str: String, con : Context): TextView {
+    // Function to create a new textview
+    fun newTextView(str: String, con: Context): TextView {
         val newView = TextView(con)
         newView.text = str
         return newView
     }
 
-    fun newImageView(id : Int, con: Context) : ImageView{
+    // Function to create a new imageview
+    fun newImageView(id: Int, con: Context): ImageView {
         val newView = ImageView(con)
         newView.setImageResource(id)
         return newView
