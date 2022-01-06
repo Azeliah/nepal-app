@@ -3,6 +3,7 @@ package com.example.sundmadnepal.data
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.Ingredient
 import com.example.sundmadnepal.model.Recipe
+import com.example.sundmadnepal.model.Step
 
 fun loadRecipes(): List<Recipe> {
 
@@ -32,10 +33,11 @@ fun loadRecipes(): List<Recipe> {
             id = 5,
             name = R.string.pumpking_pudding,
             image = R.drawable.pudding_final,
-            stepList = listOf("Step1: follow the instructions in the image", "Step2: look at the pretty picture"),
+            stepList = listOf( Step(1, R.drawable.apple, "3 cups of milk"), Step(2, R.drawable.apple, "Follow the shown picture")),
             ingredientList = listOf(
-                Ingredient(R.drawable.pudding_ingredienses_beforemaking,"3 cups of milk"),
-                                    Ingredient(R.drawable.pudding_ingredienses, "Follow the shown picture"))
+                Ingredient(1, R.drawable.red_chili,"Half a red chili"),
+                Ingredient(2, R.drawable.red_lentils, "1½ cup of lentils"),
+                Ingredient(3, R.drawable.potatoes, "3 potatoes in either squares or whole"))
 
         )
     )
