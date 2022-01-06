@@ -102,7 +102,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/zero_to_six"
+                        android:text="@string/zero_to_six_months"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textSize="30sp" />
                 </LinearLayout>
@@ -132,7 +132,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/six_to_nine"
+                        android:text="@string/six_to_nine_months"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textSize="30sp" />
                 </LinearLayout>
@@ -162,7 +162,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/nine_to_twelve"
+                        android:text="@string/nine_to_twelve_months"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textSize="30sp" />
                 </LinearLayout>
@@ -192,7 +192,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/twelve_to_twenty_four"
+                        android:text="@string/twelve_to_twenty_four_months"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         android:textSize="30sp" />
                 </LinearLayout>
