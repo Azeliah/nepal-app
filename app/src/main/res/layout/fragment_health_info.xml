@@ -20,6 +20,7 @@
             app:columnCount="2">
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/general"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -50,6 +51,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pregnant"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -80,6 +82,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/zero_to_six_months"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -110,6 +113,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/six_to_nine_months"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -140,6 +144,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/nine_to_twelve_months"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -170,6 +175,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/twelve_to_twenty_four_months"
                 android:layout_width="45dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
