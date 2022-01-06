@@ -193,7 +193,7 @@
                         android:adjustViewBounds="true"
                         android:importantForAccessibility="no"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/health_info_9_12_months" />
+                        android:src="@drawable/health_info_12_24_months" />
 
                     <TextView
                         android:layout_width="wrap_content"
