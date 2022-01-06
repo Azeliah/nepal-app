@@ -29,6 +29,7 @@ class HealthInfoSpecific : Fragment() {
 
         val linLayout: LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
 
+        // Example on how to create new views and add to linear layout
         val view1 = newTextView(resources.getString(R.string.zeroToSix1), view.context)
         val view2 = newTextView(resources.getString(R.string.zeroToSix2), view.context)
 
