@@ -9,10 +9,10 @@
     <string name="step1">Heat 1 tbsp sesame oil in a wide-based pan with a tight-fitting lid.</string>
     <string name="step2">Add 1 finely chopped red onion and cook over a low heat for 10 mins, stirring occasionally, until softened.</string>
     <string name="pregnant">गर्भवती</string>
-    <string name="zero_to_six">०-६ महिना</string>
-    <string name="six_to_nine">६-९ महिना</string>
-    <string name="nine_to_twelwe">९-१२ महिना</string>
-    <string name="twelwe_to_twentyfour">१२-२४ महिना</string>
+    <string name="zero_to_six_months">०-६ महिना</string>
+    <string name="six_to_nine_months">६-९ महिना</string>
+    <string name="nine_to_twelve_months">९-१२ महिना</string>
+    <string name="twelve_to_twenty_four_months">१२-२४ महिना</string>
     <string name="healthy_foods">स्वास्थ खाना</string>
     <string name="unhealthy_foods">अस्वास्थ खाना</string>
     <string name="quiz">हाजिरी जवाफ</string>
