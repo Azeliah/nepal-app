@@ -36,7 +36,7 @@
         tools:layout="@layout/fragment_recipes" />
     <fragment
         android:id="@+id/healthInfoSpecific"
-        android:name="com.example.sundmadnepal.HealthInfoSpecific"
+        android:name="com.example.sundmadnepal.HealthInfoSpecificFragment"
         android:label="fragment_health_info_specific"
         tools:layout="@layout/fragment_health_info_specific" />
 </navigation>
