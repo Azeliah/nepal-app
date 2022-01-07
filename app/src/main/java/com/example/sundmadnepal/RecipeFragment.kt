@@ -24,7 +24,7 @@ private const val TAG = "RecipeFragment"
 
 class RecipeFragment : Fragment() {
 
-    private var recipeIdUsage : Int = 0
+    private var recipeId : Int = 1
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +32,7 @@ class RecipeFragment : Fragment() {
         setHasOptionsMenu(true)
 
         arguments?.let{
-            recipeIdUsage = it.getInt("recipeId")
+            recipeId = it.getInt("recipeId")
         }
     }
 
@@ -46,40 +46,28 @@ class RecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //Log.d(TAG, "Id of the recipe")
-        //Log.d(TAG, recipeIdUsage.toString())
-        val recipeInUse = loadRecipes().elementAt(recipeIdUsage-1)
+
+        val recipeInUse = loadRecipes().elementAt(recipeId-1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
         recipeImage.setImageResource(recipeInUse.image ?: R.drawable.dahl)
-        if(recipeIdUsage != 0){
 
-            /*val layout = requireView().findViewById<LinearLayout>(R.id.linear)
-            setUpLayout(requireContext(), layout, recipeInUse)*/
+        //Ingredient Adapter
+        val ingredientAdapter = IngredientAdapter {ingredient -> ingredientOnclick(ingredient) }
+        ingredientAdapter.submitList(recipeInUse.ingredientList)
 
-            //Ingredient Adapter
-            val ingredientAdapter = IngredientAdapter {ingredient -> ingredientOnclick(ingredient) }
-            ingredientAdapter.submitList(recipeInUse.ingredientList)
+        val ingredientListView = view.findViewById<RecyclerView>(R.id.ingredient_list)
+        ingredientListView.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        ingredientListView.adapter = ingredientAdapter
+        ingredientListView.setHasFixedSize(true)
+        Log.d(TAG, "So far so good")
 
-            val ingredientListView = view.findViewById<RecyclerView>(R.id.ingredient_list)
-            ingredientListView.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
-            ingredientListView.adapter = ingredientAdapter
-            ingredientListView.setHasFixedSize(true)
-            Log.d(TAG, "So far so good")
+        //Step Adapter
+        val stepAdapter = StepAdapter {step -> stepOnclick(step)}
+        stepAdapter.submitList(recipeInUse.stepList)
 
-            //Step Adapter
-            val stepAdapter = StepAdapter {step -> stepOnclick(step)}
-            stepAdapter.submitList(recipeInUse.stepList)
-
-            val stepListView = view.findViewById<RecyclerView>(R.id.step_list)
-            stepListView.adapter = stepAdapter
-            stepListView.setHasFixedSize(true)
-        }
-    }
-
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
+        val stepListView = view.findViewById<RecyclerView>(R.id.step_list)
+        stepListView.adapter = stepAdapter
+        stepListView.setHasFixedSize(true)
     }
 
     private fun stepOnclick(step: Step) {
@@ -90,28 +78,5 @@ class RecipeFragment : Fragment() {
     private fun ingredientOnclick(ingredient: Ingredient) {
         //TODO implement if needed (directions), maybe just use a pop up ?
         Log.d(TAG, "Ingredient clicked: $ingredient")
-    }
-
-    private fun setUpLayout(context: Context, layout: LinearLayout, recipe: Recipe){
-        val incrementer = 0
-        for(i in recipe.ingredientList!!){
-            val textView : TextView = LayoutInflater.from(context).inflate(R.layout.text_view_layout, null) as TextView
-            textView.layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
-            textView.gravity = Gravity.LEFT
-            textView.text = i.measurements
-
-            val imageView = ImageView(context)
-            imageView.layoutParams = LinearLayout.LayoutParams(800,800)
-            imageView.x = 20F
-            imageView.y = 20f
-            val imgResId = i.image
-            var resId = imgResId
-            imageView.setImageResource(resId!!)
-
-            layout.addView(textView)
-            layout.addView(imageView)
-
-            //Log.d(TAG, requireView().findViewById<TextView>(R.id.TEXT_ID).text.toString())
-        }
     }
 }

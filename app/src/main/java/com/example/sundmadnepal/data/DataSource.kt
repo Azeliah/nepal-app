@@ -33,7 +33,7 @@ fun loadRecipes(): List<Recipe> {
             id = 5,
             name = R.string.pumpking_pudding,
             image = R.drawable.pudding_final,
-            stepList = listOf( Step(1, R.drawable.apple, "3 cups of milk"), Step(2, R.drawable.apple, "Follow the shown picture")),
+            stepList = listOf( Step(1, R.drawable.pudding_ingredienses, "3 cups of milk"), Step(2, R.drawable.pudding_final, "Follow the shown picture")),
             ingredientList = listOf(
                 Ingredient(1, R.drawable.red_chili,"Half a red chili"),
                 Ingredient(2, R.drawable.red_lentils, "1½ cup of lentils"),
