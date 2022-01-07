@@ -24,7 +24,7 @@ private const val TAG = "RecipeFragment"
 
 class RecipeFragment : Fragment() {
 
-    private var recipeId : Int = 1
+    private var recipeId : Int = 1 //This is set to 1, so that if something "goes wrong" it will still load the first recipe... for now
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -73,7 +73,6 @@ class RecipeFragment : Fragment() {
     private fun stepOnclick(step: Step) {
         Log.d(TAG, "Ingredient clicked: $step")
     }
-
 
     private fun ingredientOnclick(ingredient: Ingredient) {
         //TODO implement if needed (directions), maybe just use a pop up ?
