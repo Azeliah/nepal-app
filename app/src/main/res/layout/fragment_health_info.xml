@@ -8,22 +8,24 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#FFF">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.gridlayout.widget.GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:stretchMode="spacingWidthUniform"
+            app:columnCount="2">
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="257dp"
+                android:id="@+id/general"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -31,32 +33,61 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/item_image"
                         android:layout_width="match_parent"
-                        android:layout_height="194dp"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:importantForAccessibility="no"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/pregnant" />
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_general" />
 
                     <TextView
-                        android:id="@+id/item_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
+                        android:text="@string/general_information"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="30sp" />
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pregnant"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_pregnant" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="@string/pregnant"
                         android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="30sp"
-                        tools:text="Pregnant" />
-
+                        android:textSize="30sp" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="257dp"
+                android:id="@+id/zero_to_six_months"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -64,32 +95,30 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/item_image1"
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:importantForAccessibility="no"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/zerotosixmonths" />
-
-                    <TextView
-                        android:id="@+id/item_title1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="@string/zero_to_six"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="30sp"
-                        tools:text="0-6 months" />
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_0_6_months" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/zero_to_six_months"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="30sp" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="257dp"
+                android:id="@+id/six_to_nine_months"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -97,32 +126,30 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/item_image2"
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:importantForAccessibility="no"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/sixtotninemonths" />
-
-                    <TextView
-                        android:id="@+id/item_title2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="@string/six_to_nine"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="30sp"
-                        tools:text="6-9 months" />
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_6_9_months" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/six_to_nine_months"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="30sp" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="257dp"
+                android:id="@+id/nine_to_twelve_months"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -130,32 +157,30 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/item_image3"
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:importantForAccessibility="no"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/ninetotelwemonths" />
-
-                    <TextView
-                        android:id="@+id/item_title3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="@string/nine_to_twelwe"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="30sp"
-                        tools:text="9-12 months" />
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_9_12_months" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/nine_to_twelve_months"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="30sp" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="257dp"
+                android:id="@+id/twelve_to_twenty_four_months"
+                android:layout_width="45dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardElevation="5dp">
+                app:cardElevation="5dp"
+                app:layout_columnWeight="1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -163,27 +188,24 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/item_image4"
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:importantForAccessibility="no"
-                        android:scaleType="centerInside"
-                        app:srcCompat="@drawable/ninetotelwemonths" />
-
-                    <TextView
-                        android:id="@+id/item_title4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:text="@string/twelwe_to_twentyfour"
-                        android:textAppearance="?attr/textAppearanceHeadline6"
-                        android:textSize="30sp"
-                        tools:text="12-24 months" />
+                        android:adjustViewBounds="true"
+                        android:importantForAccessibility="no"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/health_info_12_24_months" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/twelve_to_twenty_four_months"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textSize="30sp" />
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-        </LinearLayout>
+        </androidx.gridlayout.widget.GridLayout>
+
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
