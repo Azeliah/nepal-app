@@ -36,7 +36,6 @@ class RecipesFragment : Fragment() {
     }
 
     private fun recipeOnClick(recipe: Recipe) {
-        // TODO: Implement navigating to the recipe activity/fragment
         val action =RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id)
         findNavController().navigate(action)
         Log.d(TAG, "Recipe card clicked: $recipe")

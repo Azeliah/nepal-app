@@ -18,7 +18,7 @@ class StepAdapter (private val onClick: (Step) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
 
         private val stepTextView = itemView.findViewById<TextView>(R.id.step_text)
-        private val stepImageView = itemView.findViewById<ImageView>(R.id.speech_icon)
+        private val stepImageView = itemView.findViewById<ImageView>(R.id.step_image)
         private var currentStep: Step? = null
 
         init {
