@@ -3,6 +3,7 @@
     <string name="dahl">दाल</string>
     <string name="momo">मो : मो</string>
     <string name="fried_chicken">भुटेको कुखुराको मासु</string>
+    <string name="pumpking_pudding">Pumpking pudding</string>
     <string name="newari">नेवारी खाना</string>
     <string name="ingredients">नसामग्री</string>
     <string name="steps">steps</string>
@@ -21,6 +22,8 @@
     <string name="health_info">स्वास्थ्य जानकारी</string>
     <string name="nutrition_info">पोषण जानकारी</string>
     <string name="general_information">सामान्य जानकारी</string>
+    <string name="ingredients_headline">Ingredients</string>
+    <string name="steps_headline">Steps</string>
     <string name="question1">Is this healthy?</string>
     <string name="yes">हो</string>
     <string name="no">छैन</string>
