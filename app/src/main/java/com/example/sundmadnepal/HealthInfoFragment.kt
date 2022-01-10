@@ -30,23 +30,23 @@ class HealthInfoFragment : Fragment() {
 
         // FIXME: Use RecyclerView+database or view binding to remove this ugly shit
 
-        val generalInfoView = view.findViewById<MaterialCardView>(R.id.general)
+        val generalInfoView: MaterialCardView = view.findViewById(R.id.general)
         generalInfoView.setOnClickListener { healthInfoOnClick(generalInfoView) }
 
-        val pregnantInfoView = view.findViewById<MaterialCardView>(R.id.pregnant)
+        val pregnantInfoView: MaterialCardView = view.findViewById(R.id.pregnant)
         pregnantInfoView.setOnClickListener { healthInfoOnClick(pregnantInfoView) }
 
-        val zeroToSixInfoView = view.findViewById<MaterialCardView>(R.id.zero_to_six_months)
+        val zeroToSixInfoView: MaterialCardView = view.findViewById(R.id.zero_to_six_months)
         zeroToSixInfoView.setOnClickListener { healthInfoOnClick(zeroToSixInfoView) }
 
-        val sixToNineInfoView = view.findViewById<MaterialCardView>(R.id.six_to_nine_months)
+        val sixToNineInfoView: MaterialCardView = view.findViewById(R.id.six_to_nine_months)
         sixToNineInfoView.setOnClickListener { healthInfoOnClick(sixToNineInfoView) }
 
-        val nineToTwelveInfoView = view.findViewById<MaterialCardView>(R.id.nine_to_twelve_months)
+        val nineToTwelveInfoView: MaterialCardView = view.findViewById(R.id.nine_to_twelve_months)
         nineToTwelveInfoView.setOnClickListener { healthInfoOnClick(nineToTwelveInfoView) }
 
-        val twelveToTwentyFourInfoView =
-            view.findViewById<MaterialCardView>(R.id.twelve_to_twenty_four_months)
+        val twelveToTwentyFourInfoView: MaterialCardView =
+            view.findViewById(R.id.twelve_to_twenty_four_months)
         twelveToTwentyFourInfoView.setOnClickListener { healthInfoOnClick(twelveToTwentyFourInfoView) }
     }
 
