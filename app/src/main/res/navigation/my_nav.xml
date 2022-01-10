@@ -13,7 +13,8 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.example.sundmadnepal.RecipeFragment"
-        android:label="RecipeFragment">
+        android:label="RecipeFragment"
+        tools:layout="@layout/fragment_recipe">
         <argument
             android:name="recipeId"
             android:defaultValue="1"
@@ -37,7 +38,8 @@
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.sundmadnepal.RecipesFragment"
-        android:label="fragment_recipes">
+        android:label="fragment_recipes"
+        tools:layout="@layout/fragment_recipes">
         <action
             android:id="@+id/action_recipesFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
