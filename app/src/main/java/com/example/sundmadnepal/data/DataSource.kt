@@ -1,6 +1,5 @@
 package com.example.sundmadnepal.data
 
-import android.content.Context
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.*
 import com.example.sundmadnepal.model.ElementType.*
@@ -58,27 +57,62 @@ fun loadQuestions(): List<QuizQuestion> {
 
 // Dummy data for health-info page
 fun loadHealthInfo(): List<HealthInfoPage> {
+
+    val placeholderPage = listOf(
+        HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zeroToSix1,
+        ),
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.woman_breastfeeding,
+        ),
+        HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zeroToSix2,
+        ),
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.fried_chicken,
+        )
+    )
+
     return listOf(
         HealthInfoPage(
             id = 1,
-            content = listOf(
-                HealthInfoElement(
-                    type = PARAGRAPH,
-                    contentRef = R.string.zeroToSix1,
-                ),
-                HealthInfoElement(
-                    type = IMAGE,
-                    contentRef = R.drawable.woman_breastfeeding,
-                ),
-                HealthInfoElement(
-                    type = PARAGRAPH,
-                    contentRef = R.string.zeroToSix2,
-                ),
-                HealthInfoElement(
-                    type = IMAGE,
-                    contentRef = R.drawable.fried_chicken,
-                ),
-            )
-        )
+            image = R.drawable.health_info_general,
+            title = R.string.general_information,
+            content = placeholderPage,
+        ),
+        HealthInfoPage(
+            id = 2,
+            image = R.drawable.health_info_pregnant,
+            title = R.string.pregnant,
+            content = placeholderPage,
+        ),
+        HealthInfoPage(
+            id = 3,
+            image = R.drawable.health_info_0_6_months,
+            title = R.string.zero_to_six_months,
+            content = placeholderPage,
+        ),
+        HealthInfoPage(
+            id = 4,
+            image = R.drawable.health_info_6_9_months,
+            title = R.string.six_to_nine_months,
+            content = placeholderPage,
+        ),
+        HealthInfoPage(
+            id = 5,
+            image = R.drawable.health_info_9_12_months,
+            title = R.string.nine_to_twelve_months,
+            content = placeholderPage,
+        ),
+        HealthInfoPage(
+            id = 6,
+            image = R.drawable.health_info_12_24_months,
+            title = R.string.twelve_to_twenty_four_months,
+            content = placeholderPage,
+        ),
     )
 }

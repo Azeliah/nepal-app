@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.sundmadnepal.adapter.HealthInfoAdapter
 import com.example.sundmadnepal.data.loadHealthInfo
 import com.example.sundmadnepal.model.HealthInfoPage
-import com.google.android.material.card.MaterialCardView
 
 private const val TAG = "HealthInfoFragment"
 
@@ -17,7 +19,6 @@ class HealthInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -31,30 +32,16 @@ class HealthInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // FIXME: Use RecyclerView+database or view binding to remove this ugly shit
+        val healthInfoAdapter =
+            HealthInfoAdapter { healthInfoPage -> healthInfoOnClick(healthInfoPage) }
+        healthInfoAdapter.submitList(loadHealthInfo())
 
-        val healthInfoPages = loadHealthInfo()
+        val layoutManager = GridLayoutManager(activity, 2)
 
-        val generalInfoView: MaterialCardView = view.findViewById(R.id.general)
-        generalInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
-
-        val pregnantInfoView: MaterialCardView = view.findViewById(R.id.pregnant)
-        pregnantInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
-
-        val zeroToSixInfoView: MaterialCardView = view.findViewById(R.id.zero_to_six_months)
-        zeroToSixInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
-
-        val sixToNineInfoView: MaterialCardView = view.findViewById(R.id.six_to_nine_months)
-        sixToNineInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
-
-        val nineToTwelveInfoView: MaterialCardView = view.findViewById(R.id.nine_to_twelve_months)
-        nineToTwelveInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
-
-        val twelveToTwentyFourInfoView: MaterialCardView =
-            view.findViewById(R.id.twelve_to_twenty_four_months)
-        twelveToTwentyFourInfoView.setOnClickListener {
-            healthInfoOnClick(healthInfoPages.elementAt(0))
-        }
+        val healthInfoView: RecyclerView = view.findViewById(R.id.health_info_cards)
+        healthInfoView.adapter = healthInfoAdapter
+        healthInfoView.layoutManager = layoutManager
+        healthInfoView.setHasFixedSize(true)
     }
 
     private fun healthInfoOnClick(healthInfoPage: HealthInfoPage) {
