@@ -24,7 +24,11 @@
         android:id="@+id/healthInfoFragment"
         android:name="com.example.sundmadnepal.HealthInfoFragment"
         android:label="fragment_health_info"
-        tools:layout="@layout/fragment_health_info" />
+        tools:layout="@layout/fragment_health_info" >
+        <action
+            android:id="@+id/action_healthInfoFragment_to_healthInfoSpecific"
+            app:destination="@id/healthInfoSpecific" />
+    </fragment>
     <fragment
         android:id="@+id/nutritionInfoFragment"
         android:name="com.example.sundmadnepal.NutritionInfoFragment"

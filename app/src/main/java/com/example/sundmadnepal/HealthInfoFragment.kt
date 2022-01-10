@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.card.MaterialCardView
 
 private const val TAG = "HealthInfoFragment"
@@ -58,7 +59,10 @@ class HealthInfoFragment : Fragment() {
          *       than passing the view.
          */
 
-        // TODO: Implement navigating to the health-info activity/fragment
+        // TODO: Pass the correct information as an argument to the fragment
+        val action = HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoSpecific()
+        findNavController().navigate(action)
+
         Log.d(TAG, "Health-info card pressed with id=${view.id}")
     }
 }
