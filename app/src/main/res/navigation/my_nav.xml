@@ -13,11 +13,11 @@
     <fragment
         android:id="@+id/recipeFragment"
         android:name="com.example.sundmadnepal.RecipeFragment"
-        android:label="RecipeFragment" >
+        android:label="RecipeFragment">
         <argument
             android:name="recipeId"
-            app:argType="integer"
-            android:defaultValue="1" />
+            android:defaultValue="1"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/healthInfoFragment"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/recipesFragment"
         android:name="com.example.sundmadnepal.RecipesFragment"
-        android:label="fragment_recipes"
+        android:label="fragment_recipes">
         <action
             android:id="@+id/action_recipesFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
