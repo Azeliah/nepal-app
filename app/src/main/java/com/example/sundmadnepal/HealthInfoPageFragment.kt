@@ -13,7 +13,7 @@ import com.example.sundmadnepal.data.loadHealthInfo
 import com.example.sundmadnepal.model.ElementType.*
 import com.example.sundmadnepal.model.HealthInfoPage
 
-class HealthInfoSpecificFragment : Fragment() {
+class HealthInfoPageFragment : Fragment() {
 
     private var pageId: Int = 1
 

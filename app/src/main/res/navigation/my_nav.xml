@@ -50,7 +50,7 @@
     </fragment>
     <fragment
         android:id="@+id/healthInfoSpecific"
-        android:name="com.example.sundmadnepal.HealthInfoSpecificFragment"
+        android:name="com.example.sundmadnepal.HealthInfoPageFragment"
         android:label="fragment_health_info_specific"
         tools:layout="@layout/fragment_health_info_specific">
         <argument
