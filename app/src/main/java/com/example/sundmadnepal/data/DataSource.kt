@@ -57,26 +57,26 @@ fun loadQuestions(): List<QuizQuestion> {
 }
 
 // Dummy data for health-info page
-fun loadHealthInfo(context: Context): List<HealthInfoPage> {
+fun loadHealthInfo(): List<HealthInfoPage> {
     return listOf(
         HealthInfoPage(
             id = 1,
             content = listOf(
                 HealthInfoElement(
                     type = PARAGRAPH,
-                    content = context.getString(R.string.zeroToSix1),
+                    contentRef = R.string.zeroToSix1,
                 ),
                 HealthInfoElement(
                     type = IMAGE,
-                    content = R.drawable.woman_breastfeeding,
+                    contentRef = R.drawable.woman_breastfeeding,
                 ),
                 HealthInfoElement(
                     type = PARAGRAPH,
-                    content = context.getString(R.string.zeroToSix2),
+                    contentRef = R.string.zeroToSix2,
                 ),
                 HealthInfoElement(
                     type = IMAGE,
-                    content = R.drawable.fried_chicken,
+                    contentRef = R.drawable.fried_chicken,
                 ),
             )
         )

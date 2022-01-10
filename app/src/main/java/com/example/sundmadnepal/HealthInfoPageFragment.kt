@@ -38,27 +38,25 @@ class HealthInfoPageFragment : Fragment() {
 
         val linLayout: LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
 
-        val healthInfoPage: HealthInfoPage = loadHealthInfo(requireContext()).elementAt(pageId - 1)
+        val healthInfoPage: HealthInfoPage = loadHealthInfo().elementAt(pageId - 1)
 
         for (element in healthInfoPage.content) when (element.type) {
             PARAGRAPH -> {
-                assert(element.content is String)
-                val textView = newTextView(element.content as String, view.context)
+                val textView = newTextView(element.contentRef, view.context)
                 linLayout.addView(textView)
             }
             IMAGE -> {
-                assert(element.content is Int)
-                val imageView = newImageView(element.content as Int, view.context)
+                val imageView = newImageView(element.contentRef, view.context)
                 linLayout.addView(imageView)
             }
         }
     }
 
     // Function to create a new textview
-    private fun newTextView(str: String, con: Context): TextView {
+    private fun newTextView(id: Int, con: Context): TextView {
         val newView = TextView(con)
 
-        newView.text = str
+        newView.text = con.getString(id)
         newView.textSize = 18f
 
         // Add a bit of padding on the right, so the scrollbar does not cover any text

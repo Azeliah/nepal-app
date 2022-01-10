@@ -33,7 +33,7 @@ class HealthInfoFragment : Fragment() {
 
         // FIXME: Use RecyclerView+database or view binding to remove this ugly shit
 
-        val healthInfoPages = loadHealthInfo(requireContext())
+        val healthInfoPages = loadHealthInfo()
 
         val generalInfoView: MaterialCardView = view.findViewById(R.id.general)
         generalInfoView.setOnClickListener { healthInfoOnClick(healthInfoPages.elementAt(0)) }
