@@ -48,7 +48,7 @@ class HealthInfoFragment : Fragment() {
         Log.d(TAG, "Health-info card pressed with id=${healthInfoPage.id}")
 
         val action =
-            HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoSpecific(pageId = healthInfoPage.id)
+            HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoPageFragment(pageId = healthInfoPage.id)
         findNavController().navigate(action)
     }
 }
