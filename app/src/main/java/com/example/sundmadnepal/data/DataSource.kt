@@ -34,23 +34,25 @@ fun loadRecipes(): List<Recipe> {
             id = 5,
             name = R.string.pumpking_pudding,
             image = R.drawable.pudding_final,
-            stepList = listOf( Step(1, R.drawable.pudding_ingredienses, "Step1: 3 cups of milk"), Step(2, R.drawable.pudding_final, "Step2: Follow the shown picture")),
+            stepList = listOf(
+                Step(1, R.drawable.pudding_ingredienses, "Step1: 3 cups of milk"),
+                Step(2, R.drawable.pudding_final, "Step2: Follow the shown picture")
+            ),
             ingredientList = listOf(
-                Ingredient(1, R.drawable.red_chili,"Half a red chili"),
+                Ingredient(1, R.drawable.red_chili, "Half a red chili"),
                 Ingredient(2, R.drawable.red_lentils, "1½ cup of lentils"),
-                Ingredient(3, R.drawable.potatoes, "3 potatoes in either squares or whole"))
+                Ingredient(3, R.drawable.potatoes, "3 potatoes in either squares or whole")
+            )
 
         )
     )
 }
 
 // Dummy data for quiz questions
-class DataSource {
-    fun loadQuestions(): List<QuizQuestion> {
-        return listOf(
-            QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
-            QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
-            QuizQuestion("Is it healthy for your child to eat chips", null, false)
-        )
-    }
+fun loadQuestions(): List<QuizQuestion> {
+    return listOf(
+        QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
+        QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
+        QuizQuestion("Is it healthy for your child to eat chips", null, false)
+    )
 }
