@@ -24,7 +24,7 @@
         android:id="@+id/healthInfoFragment"
         android:name="com.example.sundmadnepal.HealthInfoFragment"
         android:label="fragment_health_info"
-        tools:layout="@layout/fragment_health_info" >
+        tools:layout="@layout/fragment_health_info">
         <action
             android:id="@+id/action_healthInfoFragment_to_healthInfoSpecific"
             app:destination="@id/healthInfoSpecific" />
@@ -52,5 +52,10 @@
         android:id="@+id/healthInfoSpecific"
         android:name="com.example.sundmadnepal.HealthInfoSpecificFragment"
         android:label="fragment_health_info_specific"
-        tools:layout="@layout/fragment_health_info_specific" />
+        tools:layout="@layout/fragment_health_info_specific">
+        <argument
+            android:name="pageId"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
 </navigation>
