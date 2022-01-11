@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.sundmadnepal.data.DataSource
+import com.example.sundmadnepal.data.loadQuestions
 
 class QuizFragment : Fragment() {
 
     // Get questions for the quiz
-    private val questions = DataSource().loadQuestions()
+    private val questions = loadQuestions()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,7 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.google.android.material.card.MaterialCardView
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.sundmadnepal.adapter.HealthInfoAdapter
+import com.example.sundmadnepal.data.loadHealthInfo
+import com.example.sundmadnepal.model.HealthInfoPage
 
 private const val TAG = "HealthInfoFragment"
 
@@ -14,7 +19,6 @@ class HealthInfoFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -28,37 +32,23 @@ class HealthInfoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // FIXME: Use RecyclerView+database or view binding to remove this ugly shit
+        val healthInfoAdapter =
+            HealthInfoAdapter { healthInfoPage -> healthInfoOnClick(healthInfoPage) }
+        healthInfoAdapter.submitList(loadHealthInfo())
 
-        val generalInfoView = view.findViewById<MaterialCardView>(R.id.general)
-        generalInfoView.setOnClickListener { healthInfoOnClick(generalInfoView) }
+        val layoutManager = GridLayoutManager(activity, 2)
 
-        val pregnantInfoView = view.findViewById<MaterialCardView>(R.id.pregnant)
-        pregnantInfoView.setOnClickListener { healthInfoOnClick(pregnantInfoView) }
-
-        val zeroToSixInfoView = view.findViewById<MaterialCardView>(R.id.zero_to_six_months)
-        zeroToSixInfoView.setOnClickListener { healthInfoOnClick(zeroToSixInfoView) }
-
-        val sixToNineInfoView = view.findViewById<MaterialCardView>(R.id.six_to_nine_months)
-        sixToNineInfoView.setOnClickListener { healthInfoOnClick(sixToNineInfoView) }
-
-        val nineToTwelveInfoView = view.findViewById<MaterialCardView>(R.id.nine_to_twelve_months)
-        nineToTwelveInfoView.setOnClickListener { healthInfoOnClick(nineToTwelveInfoView) }
-
-        val twelveToTwentyFourInfoView =
-            view.findViewById<MaterialCardView>(R.id.twelve_to_twenty_four_months)
-        twelveToTwentyFourInfoView.setOnClickListener { healthInfoOnClick(twelveToTwentyFourInfoView) }
+        val healthInfoView: RecyclerView = view.findViewById(R.id.health_info_cards)
+        healthInfoView.adapter = healthInfoAdapter
+        healthInfoView.layoutManager = layoutManager
+        healthInfoView.setHasFixedSize(true)
     }
 
-    private fun healthInfoOnClick(view: View) {
-        /*
-         * NOTE: If health-info gets implemented with RecyclerView+database, this function should be
-         *       passed a data-model like in RecipesFragment, instead of a view.
-         *       In any case, I'm sure there's a better way of identifying which card was pressed
-         *       than passing the view.
-         */
+    private fun healthInfoOnClick(healthInfoPage: HealthInfoPage) {
+        Log.d(TAG, "Health-info card pressed with id=${healthInfoPage.id}")
 
-        // TODO: Implement navigating to the health-info activity/fragment
-        Log.d(TAG, "Health-info card pressed with id=${view.id}")
+        val action =
+            HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoPageFragment(pageId = healthInfoPage.id)
+        findNavController().navigate(action)
     }
 }

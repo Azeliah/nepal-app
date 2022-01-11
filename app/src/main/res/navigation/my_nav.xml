@@ -24,7 +24,11 @@
         android:id="@+id/healthInfoFragment"
         android:name="com.example.sundmadnepal.HealthInfoFragment"
         android:label="fragment_health_info"
-        tools:layout="@layout/fragment_health_info" />
+        tools:layout="@layout/fragment_health_info">
+        <action
+            android:id="@+id/action_healthInfoFragment_to_healthInfoPageFragment"
+            app:destination="@id/healthInfoPageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nutritionInfoFragment"
         android:name="com.example.sundmadnepal.NutritionInfoFragment"
@@ -45,8 +49,13 @@
             app:destination="@id/recipeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/healthInfoSpecific"
-        android:name="com.example.sundmadnepal.HealthInfoSpecificFragment"
-        android:label="fragment_health_info_specific"
-        tools:layout="@layout/fragment_health_info_specific" />
+        android:id="@+id/healthInfoPageFragment"
+        android:name="com.example.sundmadnepal.HealthInfoPageFragment"
+        android:label="fragment_health_info_page"
+        tools:layout="@layout/fragment_health_info_page">
+        <argument
+            android:name="pageId"
+            android:defaultValue="1"
+            app:argType="integer" />
+    </fragment>
 </navigation>

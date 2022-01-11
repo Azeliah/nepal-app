@@ -2,8 +2,6 @@ package com.example.sundmadnepal
 
 import android.content.Context
 import android.os.Bundle
-import android.util.DisplayMetrics
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,57 +9,64 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.annotation.DrawableRes
+import com.example.sundmadnepal.data.loadHealthInfo
+import com.example.sundmadnepal.model.ElementType.*
+import com.example.sundmadnepal.model.HealthInfoPage
 
+class HealthInfoPageFragment : Fragment() {
 
-class HealthInfoSpecificFragment : Fragment() {
+    private var pageId: Int = 1
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        arguments?.let { arguments ->
+            pageId = arguments.getInt("pageId")
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_health_info_specific, container, false)
+        return inflater.inflate(R.layout.fragment_health_info_page, container, false)
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val linLayout: LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
 
-        // Example on how to create new views and add to linear layout
-        val view1 = newTextView(resources.getString(R.string.zeroToSix1), view.context)
-        val view2 = newTextView(resources.getString(R.string.zeroToSix2), view.context)
+        val healthInfoPage: HealthInfoPage = loadHealthInfo().elementAt(pageId - 1)
 
-        linLayout.addView(view1)
-
-        val imageView1 = newImageView(R.drawable.woman_breastfeeding, view.context)
-        val imageView2 = newImageView(R.drawable.fried_chicken, view.context)
-
-        linLayout.addView(imageView1)
-
-        linLayout.addView(view2)
-
-        linLayout.addView(imageView2)
+        for (element in healthInfoPage.content) when (element.type) {
+            PARAGRAPH -> {
+                val textView = newTextView(element.contentRef, view.context)
+                linLayout.addView(textView)
+            }
+            IMAGE -> {
+                val imageView = newImageView(element.contentRef, view.context)
+                linLayout.addView(imageView)
+            }
+        }
     }
 
     // Function to create a new textview
-    fun newTextView(str: String, con: Context): TextView {
+    private fun newTextView(id: Int, con: Context): TextView {
         val newView = TextView(con)
 
-        newView.text = str
+        newView.text = con.getString(id)
         newView.textSize = 18f
 
         // Add a bit of padding on the right, so the scrollbar does not cover any text
-        newView.setPadding(0,0,10,0)
+        newView.setPadding(0, 0, 10, 0)
 
         return newView
     }
 
     // Function to create a new imageview
-    fun newImageView(id: Int, con: Context): ImageView {
+    private fun newImageView(id: Int, con: Context): ImageView {
         val newView = ImageView(con)
         newView.setImageResource(id)
 
@@ -70,5 +75,4 @@ class HealthInfoSpecificFragment : Fragment() {
 
         return newView
     }
-
 }
