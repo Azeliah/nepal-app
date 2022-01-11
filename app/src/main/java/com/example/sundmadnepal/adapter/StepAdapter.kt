@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -33,9 +34,14 @@ class StepAdapter (private val onClick: (Step) -> Unit) :
             currentStep = step
 
             stepTextView.text = step.stepText
-            stepImageView.setImageResource(step.image ?: R.drawable.pudding_ingredienses)
-        }
 
+            //If image of step is null, then hide the imageview, so there is no empty space in the recyclerview
+            if(step.image != null) {
+                stepImageView.setImageResource(step.image)
+            } else{
+                stepImageView.isVisible = false
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StepViewHolder {

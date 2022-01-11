@@ -36,5 +36,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Strings for recipes dummy data -->
+    <string name="nutritious_flower">Nutritious flower</string>
+    <string name="jaulo">जाउलो</string>
+
 </resources>
 
