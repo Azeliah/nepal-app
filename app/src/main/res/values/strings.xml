@@ -28,8 +28,8 @@
     <string name="yes">हो</string>
     <string name="no">छैन</string>
     <string name="nextQuestion">अर्को प्रश्न</string>
-    <string name="correct">Correct</string>
-    <string name="wrong">Wrong</string>
+    <string name="correct">सहि</string>
+    <string name="wrong">गलत</string>
     <string name="zeroToSix1">The child should be examined at the health institution on the third day within 24 hours of birth and at 4 months.</string>
     <string name="zeroToSix2">The first yellow milk of the mother should be fed as soon as possible (within 1 hour) after the birth of the newborn baby.</string>
 
