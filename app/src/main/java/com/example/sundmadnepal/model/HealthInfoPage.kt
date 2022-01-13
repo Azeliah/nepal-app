@@ -3,12 +3,11 @@ package com.example.sundmadnepal.model
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
-data class Recipe(
+data class HealthInfoPage(
     val id: Int,
     @StringRes
-    val name: Int,
+    val title: Int,
     @DrawableRes
-    val image: Int?,
-    val stepList : List<Step>? = null,
-    val ingredientList : List<Ingredient>? = null,
+    val image: Int,
+    val content: List<HealthInfoElement>,
 )

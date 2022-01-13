@@ -3,13 +3,13 @@
 
     <item android:title="@string/recipes"
         android:id="@+id/recipesFragment"
-        android:icon="@drawable/recipes"/>
+        android:icon="@drawable/cookicon" />
     <item android:title="@string/health_info"
         android:id="@+id/healthInfoFragment"
         android:icon="@drawable/heart" />
     <item android:title="@string/nutrition_info"
         android:id="@+id/nutritionInfoFragment"
-        android:icon="@drawable/apple"/>
+        android:icon="@drawable/apple_new"/>
     <item android:title="@string/quiz"
         android:id="@+id/quizFragment"
         android:icon="@drawable/ideas"/>

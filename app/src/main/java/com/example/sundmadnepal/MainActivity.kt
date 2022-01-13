@@ -3,22 +3,23 @@ package com.example.sundmadnepal
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var navControllerTop: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // This is maybe used when we make the real app
-        /*val myDataset = Datasource().loadRecipes()
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = ItemAdapter(this, myDataset)
-        recyclerView.setHasFixedSize(true)*/
-
         // Set always day mode
+        // FIXME: Modify the night mode styling to be prettier, so we don't have to disable it here
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         // Hide the action bar at the top
@@ -28,5 +29,15 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.fragment)
 
         bottomNavigationView.setupWithNavController(navController)
+
+        //Used for top navigation bar
+        /*val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
+        navControllerTop = navHostFragment.navController
+        setupActionBarWithNavController(navControllerTop)*/
     }
+
+    //Used for top navigation bar
+    /*override fun onSupportNavigateUp(): Boolean {
+        return navControllerTop.navigateUp() || super.onSupportNavigateUp()
+    }*/
 }
