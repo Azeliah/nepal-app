@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "201401062917",
+    "project_id": "sundmadnepal-9e606",
+    "storage_bucket": "sundmadnepal-9e606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201401062917:android:e36f6a0ab5f9e7bc65ae6c",
+        "android_client_info": {
+          "package_name": "com.example.sundmadnepal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201401062917-b2k778us0avpmo4nmtefkbie4kacvv6k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzeIlj--E1qe_DCduS2VuvJwUjJ_Ykfxg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201401062917-b2k778us0avpmo4nmtefkbie4kacvv6k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
