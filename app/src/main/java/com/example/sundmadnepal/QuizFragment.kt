@@ -99,15 +99,14 @@ class QuizFragment : Fragment() {
         // Add functionality to the nextButton
         nextButton.setOnClickListener {
             resultText.visibility = View.INVISIBLE
+            nextButton.visibility = View.INVISIBLE
             yesButton.visibility = View.VISIBLE
             noButton.visibility = View.VISIBLE
-            nextButton.visibility = View.INVISIBLE
 
             // Pick a new random question
-            if(questions.count() > 0) {
+            if (questions.count() > 0) {
                 currQuestion = questions.random()
-            }
-            else {
+            } else {
                 questions = loadQuestions()
                 currQuestion = questions.random()
             }
