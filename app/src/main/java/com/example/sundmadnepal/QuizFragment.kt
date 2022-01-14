@@ -49,7 +49,7 @@ class QuizFragment : Fragment() {
         var currQuestion = questions.random()
 
         // Set the text of the first question
-        questionText.text = currQuestion.question
+        questionText.text = view.context.getString(currQuestion.question)
 
         // Set the image for the question, if it has an image
         if (currQuestion.imageResourceId != null) {
@@ -105,7 +105,7 @@ class QuizFragment : Fragment() {
             currQuestion = questions.random()
 
             // Update the question text and image
-            questionText.text = currQuestion.question
+            questionText.text = view.context.getString(currQuestion.question)
 
             if (currQuestion.imageResourceId != null) {
                 questionImage.visibility = View.VISIBLE

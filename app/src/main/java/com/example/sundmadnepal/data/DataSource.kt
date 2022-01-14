@@ -80,9 +80,9 @@ fun loadRecipes(): List<Recipe> {
 // Dummy data for quiz questions
 fun loadQuestions(): List<QuizQuestion> {
     return listOf(
-        QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
-        QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
-        QuizQuestion("Is it healthy for your child to eat chips", null, false)
+        QuizQuestion(R.string.healthyQuestion, R.drawable.fried_chicken, false),
+        QuizQuestion(R.string.healthyQuestion, R.drawable.potatoes, true),
+        QuizQuestion(R.string.chipsQuestion, null, false)
     )
 }
 
