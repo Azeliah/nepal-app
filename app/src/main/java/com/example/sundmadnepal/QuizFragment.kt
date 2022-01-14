@@ -13,7 +13,7 @@ import com.example.sundmadnepal.data.loadQuestions
 class QuizFragment : Fragment() {
 
     // Get questions for the quiz
-    private val questions = loadQuestions()
+    private var questions = loadQuestions()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +47,8 @@ class QuizFragment : Fragment() {
 
         // Set the current questions text
         var currQuestion = questions.random()
+
+        questions.remove(currQuestion)
 
         // Set the text of the first question
         questionText.text = view.context.getString(currQuestion.question)
@@ -102,7 +104,15 @@ class QuizFragment : Fragment() {
             nextButton.visibility = View.INVISIBLE
 
             // Pick a new random question
-            currQuestion = questions.random()
+            if(questions.count() > 0) {
+                currQuestion = questions.random()
+            }
+            else {
+                questions = loadQuestions()
+                currQuestion = questions.random()
+            }
+
+            questions.remove(currQuestion)
 
             // Update the question text and image
             questionText.text = view.context.getString(currQuestion.question)

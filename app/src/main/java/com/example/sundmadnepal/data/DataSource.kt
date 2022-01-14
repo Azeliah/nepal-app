@@ -78,11 +78,12 @@ fun loadRecipes(): List<Recipe> {
 }
 
 // Dummy data for quiz questions
-fun loadQuestions(): List<QuizQuestion> {
-    return listOf(
+fun loadQuestions(): MutableList<QuizQuestion> {
+    return mutableListOf(
         QuizQuestion(R.string.healthyQuestion, R.drawable.fried_chicken, false),
         QuizQuestion(R.string.healthyQuestion, R.drawable.potatoes, true),
-        QuizQuestion(R.string.chipsQuestion, null, false)
+        QuizQuestion(R.string.chipsQuestion, null, false),
+        QuizQuestion(R.string.waterQuestion, null, false)
     )
 }
 
