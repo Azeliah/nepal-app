@@ -24,6 +24,7 @@
         android:layout_height="78dp"
         android:layout_marginTop="44dp"
         android:layout_marginEnd="56dp"
+        android:backgroundTint="#D11111"
         android:text="@string/no"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionImage"
