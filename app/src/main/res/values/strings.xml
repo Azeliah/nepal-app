@@ -36,9 +36,6 @@
     <string name="protective_food">सुरक्षात्मक खाना</string>
     <string name="energy_food">ऊर्जा खाना</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
     <!-- Strings for recipes dummy data -->
     <string name="nutritious_flower">Nutritious flower</string>
     <string name="jaulo">जाउलो</string>
