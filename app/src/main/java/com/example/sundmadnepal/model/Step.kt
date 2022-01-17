@@ -1,10 +1,7 @@
 package com.example.sundmadnepal.model
 
-import androidx.annotation.DrawableRes
-
-data class Step (
+data class Step(
     val id: Int,
-    @DrawableRes
-    val image: Int?,
+    val imageUrl: String?,
     val stepText: String,
 )

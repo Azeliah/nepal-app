@@ -1,14 +1,30 @@
 package com.example.sundmadnepal.model
 
-import androidx.annotation.DrawableRes
-import androidx.annotation.StringRes
+class Recipe {
+    var id: Int? = null
+    var name: String? = null
+    var imageUrl: String? = null
+    var stepList: List<Step>? = null
+    var ingredientList: List<Ingredient>? = null
 
-data class Recipe(
-    val id: Int,
-    @StringRes
-    val name: Int,
-    @DrawableRes
-    val image: Int?,
-    val stepList : List<Step>? = null,
-    val ingredientList : List<Ingredient>? = null,
-)
+    // TODO: Find out if this constructor is necessary. Code lab suggests that it is.
+    constructor() // Empty constructor for Firebase serialization (Is this needed??)
+
+    constructor(
+        id: Int?,
+        name: String?,
+        imageUrl: String?,
+        stepList: List<Step>?,
+        ingredientList: List<Ingredient>?
+    ) {
+        this.id = id
+        this.name = name
+        this.imageUrl = imageUrl
+        this.stepList = stepList
+        this.ingredientList = ingredientList
+    }
+}
+
+
+
+
