@@ -31,7 +31,8 @@ class RecipesAdapter(private val onClick: (Recipe) -> Unit) :
         fun bind(recipe: Recipe) {
             currentRecipe = recipe
 
-            recipeTextView.setText(recipe.name)
+            recipeTextView.text = recipe.name
+            // TODO: Import image from URL
             recipeImageView.setImageResource(recipe.image ?: R.drawable.dahl)
         }
     }

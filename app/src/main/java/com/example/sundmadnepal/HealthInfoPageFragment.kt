@@ -2,15 +2,16 @@ package com.example.sundmadnepal
 
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.sundmadnepal.data.loadHealthInfo
-import com.example.sundmadnepal.model.ElementType.*
+import com.example.sundmadnepal.model.ElementType.IMAGE
+import com.example.sundmadnepal.model.ElementType.PARAGRAPH
 import com.example.sundmadnepal.model.HealthInfoPage
 
 class HealthInfoPageFragment : Fragment() {

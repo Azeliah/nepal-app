@@ -13,21 +13,21 @@ import com.example.sundmadnepal.adapter.IngredientAdapter
 import com.example.sundmadnepal.adapter.StepAdapter
 import com.example.sundmadnepal.data.loadRecipes
 import com.example.sundmadnepal.model.Ingredient
-import com.example.sundmadnepal.model.Recipe
 import com.example.sundmadnepal.model.Step
 
 private const val TAG = "RecipeFragment"
 
 class RecipeFragment : Fragment() {
 
-    private var recipeId : Int = 1 //This is set to 1, so that if something "goes wrong" it will still load the first recipe... for now
+    private var recipeId: Int =
+        1 //This is set to 1, so that if something "goes wrong" it will still load the first recipe... for now
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
 
-        arguments?.let{
+        arguments?.let {
             recipeId = it.getInt("recipeId")
         }
     }
@@ -43,22 +43,23 @@ class RecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recipeInUse = loadRecipes().elementAt(recipeId-1)
+        val recipeInUse = loadRecipes().elementAt(recipeId - 1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
         recipeImage.setImageResource(recipeInUse.image ?: R.drawable.dahl)
 
         //Ingredient Adapter
-        val ingredientAdapter = IngredientAdapter {ingredient -> ingredientOnclick(ingredient) }
+        val ingredientAdapter = IngredientAdapter { ingredient -> ingredientOnclick(ingredient) }
         ingredientAdapter.submitList(recipeInUse.ingredientList)
 
         val ingredientListView = view.findViewById<RecyclerView>(R.id.ingredient_list)
-        ingredientListView.layoutManager = GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
+        ingredientListView.layoutManager =
+            GridLayoutManager(requireContext(), 2, GridLayoutManager.VERTICAL, false)
         ingredientListView.adapter = ingredientAdapter
         ingredientListView.setHasFixedSize(true)
         Log.d(TAG, "So far so good")
 
         //Step Adapter
-        val stepAdapter = StepAdapter {step -> stepOnclick(step)}
+        val stepAdapter = StepAdapter { step -> stepOnclick(step) }
         stepAdapter.submitList(recipeInUse.stepList)
 
         val stepListView = view.findViewById<RecyclerView>(R.id.step_list)

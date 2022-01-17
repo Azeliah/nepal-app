@@ -2,15 +2,15 @@ package com.example.sundmadnepal
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.RecipesAdapter
-import com.example.sundmadnepal.model.Recipe
 import com.example.sundmadnepal.data.loadRecipes
+import com.example.sundmadnepal.model.Recipe
 
 private const val TAG = "RecipesFragment"
 
@@ -36,7 +36,8 @@ class RecipesFragment : Fragment() {
     }
 
     private fun recipeOnClick(recipe: Recipe) {
-        val action =RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id)
+        val action =
+            RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id)
         findNavController().navigate(action)
         Log.d(TAG, "Recipe card clicked: $recipe")
     }

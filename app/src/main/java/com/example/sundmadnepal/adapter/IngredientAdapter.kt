@@ -19,7 +19,7 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
 
         private val ingredientTextView = itemView.findViewById<TextView>(R.id.measurement)
         private val ingredientImageView = itemView.findViewById<ImageView>(R.id.ingredient)
-        private var currentIngredient : Ingredient? = null
+        private var currentIngredient: Ingredient? = null
 
         init {
             itemView.setOnClickListener {
@@ -29,16 +29,19 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
             }
         }
 
-        fun bind(ingredient: Ingredient){
+        fun bind(ingredient: Ingredient) {
             currentIngredient = ingredient
 
             ingredientTextView.text = ingredient.measurements
-            ingredientImageView.setImageResource(ingredient.image ?: R.drawable.pudding_ingredienses)
+            ingredientImageView.setImageResource(
+                ingredient.image ?: R.drawable.pudding_ingredienses
+            )
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IngredientViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.ingredient_item, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.ingredient_item, parent, false)
         return IngredientViewHolder(view, onClick)
     }
 

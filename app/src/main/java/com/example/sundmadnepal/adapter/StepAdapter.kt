@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.Step
 
-class StepAdapter (private val onClick: (Step) -> Unit) :
+class StepAdapter(private val onClick: (Step) -> Unit) :
     ListAdapter<Step, StepAdapter.StepViewHolder>(StepDiffCallback) {
 
-    class StepViewHolder (itemView: View, val onClick: (Step) -> Unit) :
+    class StepViewHolder(itemView: View, val onClick: (Step) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
 
         private val stepTextView = itemView.findViewById<TextView>(R.id.step_text)
@@ -30,15 +30,17 @@ class StepAdapter (private val onClick: (Step) -> Unit) :
             }
         }
 
-        fun bind(step: Step){
+        fun bind(step: Step) {
             currentStep = step
 
             stepTextView.text = step.stepText
 
+            // TODO: Import image with URL from database.
+
             //If image of step is null, then hide the imageview, so there is no empty space in the recyclerview
-            if(step.image != null) {
+            if (step.image != null) {
                 stepImageView.setImageResource(step.image)
-            } else{
+            } else {
                 stepImageView.isVisible = false
             }
         }
