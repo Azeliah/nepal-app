@@ -24,7 +24,3 @@ class Recipe {
         this.ingredientList = ingredientList
     }
 }
-
-
-
-
