@@ -34,6 +34,8 @@
     <string name="strengthening_food">बलियो खाना</string>
     <string name="protective_food">सुरक्षात्मक खाना</string>
     <string name="energy_food">ऊर्जा खाना</string>
+
+    <!-- Strings for questions -->
     <string name="healthy_question">Is this healthy?</string>
     <string name="chips_question">Is it healthy for your child to eat chips</string>
     <string name="water_question">Does a 3 month old baby need water?</string>
