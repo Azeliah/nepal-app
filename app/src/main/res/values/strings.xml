@@ -6,7 +6,7 @@
     <string name="pumpking_pudding">Pumpking pudding</string>
     <string name="newari">नेवारी खाना</string>
     <string name="ingredients">नसामग्री</string>
-    <string name="steps">steps</string>
+    <string name="steps">चरणहरू</string>
     <string name="step1">Heat 1 tbsp sesame oil in a wide-based pan with a tight-fitting lid.</string>
     <string name="step2">Add 1 finely chopped red onion and cook over a low heat for 10 mins, stirring occasionally, until softened.</string>
     <string name="pregnant">गर्भवती</string>
@@ -22,8 +22,6 @@
     <string name="health_info">स्वास्थ्य जानकारी</string>
     <string name="nutrition_info">पोषण जानकारी</string>
     <string name="general_information">सामान्य जानकारी</string>
-    <string name="ingredients_headline">Ingredients</string>
-    <string name="steps_headline">Steps</string>
     <string name="question1">Is this healthy?</string>
     <string name="yes">हो</string>
     <string name="no">छैन</string>
