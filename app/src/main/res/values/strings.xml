@@ -32,9 +32,12 @@
     <string name="wrong">गलत</string>
     <string name="zeroToSix1">The child should be examined at the health institution on the third day within 24 hours of birth and at 4 months.</string>
     <string name="zeroToSix2">The first yellow milk of the mother should be fed as soon as possible (within 1 hour) after the birth of the newborn baby.</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="strengthening_food">शरीर निर्माण खाना (शक्ति)</string>
+    <string name="strengthening_food_description">१. शरीरको वृद्धि र विकासमा मद्दत गर्छ।\n२. शरीरका सबै तन्तुहरूको वृद्धि र मरम्मतको लागि आवश्यक छ।\n३. घाउ निको हुन्छ ।\n४. रोगसँग लड्न प्रतिरोधात्मक क्षमता बढाउनुहोस्।</string>
+    <string name="protective_food">सुरक्षात्मक खाना</string>
+    <string name="protective_food_description">१. रोगसँग लड्न प्रतिरोधात्मक क्षमता बढाउनुहोस्।\n२. हरियो र पहेंलो खानाले आँखा स्वस्थ राख्न मद्दत गर्छ, छाला नरम हुन्छ र आन्द्रा स्वस्थ रहन्छ\n३. फाइबरयुक्त तरकारीले पेट सफा गर्न मद्दत गर्छ ।\n४. खाना पचाउन मद्दत गर्छ।</string>
+    <string name="energy_food">ऊर्जा दिने खाना</string>
+    <string name="energy_food_description">१. ऊर्जा प्रदान गर्दछ।\n२. शरीरमा न्यानोपन प्रदान गर्दछ र शरीरको तापक्रम कायम राख्छ।\n३. मुख र जिब्रोमा सूजन, मांसपेशी दुखाइ, छाला सुख्खा, कब्जियत, आदि जस्ता रोगहरू रोकथाम  रोक्नुहोस्।\n४. दीर्घकालीन कमीले मुटुको समस्या निम्त्याउन सक्छ।</string>
 
     <!-- Strings for recipes dummy data -->
     <string name="nutritious_flower">Nutritious flower</string>
