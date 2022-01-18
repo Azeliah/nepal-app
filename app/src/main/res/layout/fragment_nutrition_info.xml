@@ -22,15 +22,137 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Strengthening Food" />
 
-        <ImageView
-            android:id="@+id/strengthening_food_image"
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/strengthening_food_images"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/food_groups_strengthening"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/strengthening_food_title" />
+            app:layout_constraintTop_toBottomOf="@id/strengthening_food_title"
+            app:orientation="horizontal"
+            app:columnCount="3">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/barley"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/brown_rice"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/buckwheat"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/corn"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ghee"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/honey"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/millet"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/oil"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/potato"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sugar"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sugar_cane"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sweet_potato"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/taro_root"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/wheat"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/yam"
+                app:layout_columnWeight="1" />
+
+        </androidx.gridlayout.widget.GridLayout>
 
         <View
             android:id="@+id/divider1"
@@ -42,7 +164,7 @@
             android:background="#c0c0c0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/strengthening_food_image" />
+            app:layout_constraintTop_toBottomOf="@id/strengthening_food_images" />
 
         <TextView
             android:id="@+id/protective_food_title"
@@ -56,15 +178,49 @@
             app:layout_constraintTop_toBottomOf="@+id/divider1"
             tools:text="Protective Food" />
 
-        <ImageView
-            android:id="@+id/protective_food_image"
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/protective_food_images"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/food_groups_protective"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/protective_food_title" />
+            app:layout_constraintTop_toBottomOf="@id/protective_food_title"
+            app:orientation="horizontal"
+            app:columnCount="3">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/stuff"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/citrus"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/bananas"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/vegetables"
+                app:layout_columnWeight="1" />
+
+        </androidx.gridlayout.widget.GridLayout>
 
         <View
             android:id="@+id/divider2"
@@ -76,7 +232,7 @@
             android:background="#c0c0c0"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/protective_food_image" />
+            app:layout_constraintTop_toBottomOf="@id/protective_food_images" />
 
         <TextView
             android:id="@+id/energy_food_title"
@@ -90,15 +246,137 @@
             app:layout_constraintTop_toBottomOf="@+id/divider2"
             tools:text="Energy Food" />
 
-        <ImageView
-            android:id="@+id/energy_food_image"
+        <androidx.gridlayout.widget.GridLayout
+            android:id="@+id/energy_food_images"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:src="@drawable/food_groups_energy"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/energy_food_title" />
+            app:layout_constraintTop_toBottomOf="@id/energy_food_title"
+            app:orientation="horizontal"
+            app:columnCount="3">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/black_gram_beans"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/black_soybean"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/chickpeas"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/eggs"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/fava_beans"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/fish"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/green_gram"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/meat"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/milk"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/peanuts"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/pumpkin_seeds"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sesame_seeds"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/sprouted_beans"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/walnut"
+                app:layout_columnWeight="1" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/yoghurt"
+                app:layout_columnWeight="1" />
+
+        </androidx.gridlayout.widget.GridLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
