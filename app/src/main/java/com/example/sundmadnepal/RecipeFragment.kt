@@ -1,6 +1,7 @@
 package com.example.sundmadnepal
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class RecipeFragment : Fragment() {
 
     private var recipeId : Int = 1 //This is set to 1, so that if something "goes wrong" it will still load the first recipe... for now
     private val ttsMan = TtsManager()
+    private var tts : TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,7 +47,7 @@ class RecipeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         //Initialize tts
-        ttsMan.initializeTts(requireContext(), Locale("ne_NP"))
+        tts = ttsMan.initializeTts(requireContext(), Locale("ne_NP"))
 
         val recipeInUse = loadRecipes().elementAt(recipeId-1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
@@ -79,5 +81,14 @@ class RecipeFragment : Fragment() {
         //TODO implement if needed (directions), maybe just use a pop up ?
         Log.d(TAG, "Ingredient clicked: $ingredient")
         ttsMan.speakOut(ingredient.measurements)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        if (tts != null) {
+            Log.w("TTS", "Stopping/shutting down TTS")
+            tts!!.stop()
+            tts!!.shutdown()
+        }
     }
 }

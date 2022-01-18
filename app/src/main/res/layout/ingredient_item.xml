@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="5dp"
     android:layout_width="match_parent"
@@ -21,13 +20,26 @@
             android:paddingBottom="10dp"
             android:scaleType="centerCrop"/>
 
-        <TextView
-            android:id="@+id/measurement"
-            android:layout_width="wrap_content"
+        <TableRow
+            android:id="@+id/table_row"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:textAppearance="?attr/textAppearanceHeadline5"
-            android:textSize="15sp"/>
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/speech_icon_ingredient"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:src="@drawable/speech_icon"/>
+
+            <TextView
+                android:id="@+id/measurement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textSize="15sp"/>
+        </TableRow>
 
     </LinearLayout>
 

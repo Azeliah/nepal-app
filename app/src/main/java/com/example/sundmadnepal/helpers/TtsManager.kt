@@ -33,10 +33,12 @@ class TtsManager : AppCompatActivity(), TextToSpeech.OnInitListener {
      * Function to initialize the text to speech.
      * @context: the context of the file you call this method from
      * @locale: the language you want to be spoken, by default it will use the locale language of the phone
+     * @return: Returns the TTS object, which should be destroyed in OnDestroyView function in fragments
      */
-    fun initializeTts(context: Context, lcl: Locale = Locale.getDefault()){
+    fun initializeTts(context: Context, lcl: Locale = Locale.getDefault()) : TextToSpeech{
         tts = TextToSpeech(context, this)
         locale = lcl
+        return tts as TextToSpeech
     }
 
     /**
@@ -54,9 +56,9 @@ class TtsManager : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     /**
      * Used to stop the tts
+     * Should also be implemented in the onDestroyView for the different fragments
      */
     public override fun onDestroy() {
-        //super.onDestroy()
         if (tts != null) {
             Log.w("TTS", "Stopping/shutting down TTS")
             tts!!.stop()

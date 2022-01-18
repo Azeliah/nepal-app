@@ -25,7 +25,7 @@ class StepAdapter (private val onClick: (Step) -> Unit) :
         init {
             //For now its only by click on text that it will be read out loud
             //TODO: Implement this with an image or the likes of it ?
-            stepTextView.setOnClickListener {
+            itemView.findViewById<ImageView>(R.id.speech_icon_step).setOnClickListener {
                 currentStep?.let { currentStep ->
                     onClick(currentStep)
                 }
