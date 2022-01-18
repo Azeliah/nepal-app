@@ -22,7 +22,7 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
         private var currentIngredient : Ingredient? = null
 
         init {
-            itemView.findViewById<ImageView>(R.id.speech_icon_ingredient).setOnClickListener {
+            itemView.setOnClickListener {
                 currentIngredient?.let { currentIngredient ->
                     onClick(currentIngredient)
                 }
