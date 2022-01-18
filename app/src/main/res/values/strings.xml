@@ -24,10 +24,9 @@
     <string name="general_information">सामान्य जानकारी</string>
     <string name="ingredients_headline">Ingredients</string>
     <string name="steps_headline">Steps</string>
-    <string name="question1">Is this healthy?</string>
     <string name="yes">हो</string>
     <string name="no">छैन</string>
-    <string name="nextQuestion">अर्को प्रश्न</string>
+    <string name="next_question">अर्को प्रश्न</string>
     <string name="correct">सहि</string>
     <string name="wrong">गलत</string>
     <string name="zeroToSix1">The child should be examined at the health institution on the third day within 24 hours of birth and at 4 months.</string>
@@ -35,9 +34,12 @@
     <string name="strengthening_food">बलियो खाना</string>
     <string name="protective_food">सुरक्षात्मक खाना</string>
     <string name="energy_food">ऊर्जा खाना</string>
-    <string name="healthyQuestion">Is this healthy?</string>
-    <string name="chipsQuestion">Is it healthy for your child to eat chips</string>
-    <string name="waterQuestion">Does a 3 month old baby need water?</string>
+    <string name="healthy_question">Is this healthy?</string>
+    <string name="chips_question">Is it healthy for your child to eat chips</string>
+    <string name="water_question">Does a 3 month old baby need water?</string>
+    <string name="strength_question">Does this belong in the strength food group?</string>
+    <string name="energy_question">Does this belong in the energy food group?</string>
+    <string name="protective_question">Does this belong in the protection food group?</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
