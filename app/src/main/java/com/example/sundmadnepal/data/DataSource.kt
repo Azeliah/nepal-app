@@ -5,13 +5,23 @@ import com.example.sundmadnepal.model.*
 import com.google.firebase.database.DataSnapshot
 
 
-class DataSource(dataSnapshot: DataSnapshot) {
-    private val ds: DataSnapshot = dataSnapshot
+class DataSource(ds: DataSnapshot) {
+
+    lateinit var recipes: List<Recipe>
+    lateinit var questions: List<QuizQuestion>
+    lateinit var healthInfo: List<HealthInfoPage>
+
+
+    init {
+        loadRecipes(ds)
+        loadQuestions(ds)
+        loadHealthInfo(ds)
+    }
 
 // TODO: Redefine loadRecipes, loadQuestions, loadHealthInfo
 
 
-    fun loadRecipes(): List<Recipe> {
+    private fun loadRecipes(ds: DataSnapshot) {
         // TODO: Add security to ward off null elements.
         val foodItems = mutableListOf<FoodItem>()
         ds.child("foodItem").children.forEachIndexed { i, foodItemSnapshot ->
@@ -25,7 +35,7 @@ class DataSource(dataSnapshot: DataSnapshot) {
             )
         }
 
-        val recipes = mutableListOf<Recipe>()
+        val recipeList = mutableListOf<Recipe>()
         ds.child("recipe").children.forEachIndexed { i, recipeSnapshot ->
             val ingredients = mutableListOf<Ingredient>()
 
@@ -66,7 +76,7 @@ class DataSource(dataSnapshot: DataSnapshot) {
                     )
                 )
             }
-            recipes.add(
+            recipeList.add(
                 i,
                 Recipe(
                     recipeSnapshot.child("name").toString(),
@@ -77,19 +87,20 @@ class DataSource(dataSnapshot: DataSnapshot) {
 
             )
         }
-        return recipes
+
+        recipes = recipeList
     }
 
 
-    fun loadQuestions(): List<QuizQuestion> {
-        val questions = mutableListOf<QuizQuestion>()
+    private fun loadQuestions(ds: DataSnapshot) {
+        val questionList = mutableListOf<QuizQuestion>()
 
         ds.child("quiz_question").children.forEachIndexed { i, questionSnapshot ->
             var imageUrl: String? = null
             if (questionSnapshot.child("imageUrl").exists()) {
                 imageUrl = questionSnapshot.child("imageUrl").toString()
             }
-            questions.add(
+            questionList.add(
                 i,
                 QuizQuestion(
                     questionSnapshot.child("question").toString(),
@@ -98,10 +109,11 @@ class DataSource(dataSnapshot: DataSnapshot) {
                 )
             )
         }
-        return questions
+
+        questions = questionList
     }
 
-    fun loadHealthInfo(): List<HealthInfoPage> {
+    private fun loadHealthInfo(ds: DataSnapshot) {
         val healthInfoPages = mutableListOf<HealthInfoPage>()
 
         ds.child("health_info_page").children.forEachIndexed { i, pageData ->
@@ -130,6 +142,7 @@ class DataSource(dataSnapshot: DataSnapshot) {
                 )
             )
         }
-        return healthInfoPages
+
+        healthInfo = healthInfoPages
     }
 }
