@@ -1,35 +1,89 @@
 package com.example.sundmadnepal.data
 
+import android.util.Log
 import com.example.sundmadnepal.model.FoodItem
-import com.example.sundmadnepal.model.HealthInfoPage
-import com.example.sundmadnepal.model.QuizQuestion
+import com.example.sundmadnepal.model.Ingredient
 import com.example.sundmadnepal.model.Recipe
+import com.example.sundmadnepal.model.Step
 import com.google.firebase.database.DataSnapshot
 
 
-class DataSource {
-    lateinit var foodItemList: List<FoodItem>
-    lateinit var recipeList: List<Recipe>
-    lateinit var quizQuestionList: List<QuizQuestion>
-    lateinit var healthInfoPageList: List<HealthInfoPage>
-
-    constructor(dataSnapshot: DataSnapshot) {
-        var foodItemData = dataSnapshot.child("foodItem").children
-        for (e in foodItemData) {
-
-        }
-        var recipeData = dataSnapshot.child("recipe").children
-        var quizQuestionData = dataSnapshot.child("quiz_question").children
-        var healthInfoPageData = dataSnapshot.child("health_info_page").children
-    }
-}
-
+class DataSource(dataSnapshot: DataSnapshot) {
+    private val ds: DataSnapshot = dataSnapshot
 
 // TODO: Redefine loadRecipes, loadQuestions, loadHealthInfo
 
-/*
-fun loadRecipes(): List<Recipe> {
 
+    fun loadRecipes(): List<Recipe> {
+        // TODO: Add security to ward off null elements.
+        val foodItems = mutableListOf<FoodItem>()
+        ds.child("foodItem").children.forEachIndexed { i, foodItemSnapshot ->
+            foodItems.add(
+                i,
+                FoodItem(
+                    foodItemSnapshot.key.toString(),
+                    foodItemSnapshot.child("name").toString(),
+                    foodItemSnapshot.child("imageUrl").toString()
+                )
+            )
+        }
+
+        val recipes = mutableListOf<Recipe>()
+        ds.child("recipe").children.forEachIndexed { i, recipeSnapshot ->
+            val ingredients = mutableListOf<Ingredient>()
+
+            recipeSnapshot.child("ingredient").children.forEachIndexed { j, ingredientSnapshot ->
+                val foodItemKey = ingredientSnapshot.child("foodItem").toString()
+                var targetFoodItem: FoodItem? = null
+                for (ele in foodItems) {
+                    if (ele.id.equals(foodItemKey)) {
+                        targetFoodItem = ele
+                        break;
+                    }
+                }
+                if (targetFoodItem == null)
+                    Log.e("DataImport", "Couldn't find food item with key $foodItemKey")
+
+
+                ingredients.add(
+                    j,
+                    Ingredient(
+                        targetFoodItem,
+                        ingredientSnapshot.child("measurement").toString()
+                    )
+                )
+            }
+
+            val steps = mutableListOf<Step>()
+
+            recipeSnapshot.child("step").children.forEachIndexed { j, stepSnapshot ->
+                var imageUrl: String? = null
+                if (stepSnapshot.child("imageUrl").exists()) {
+                    imageUrl = stepSnapshot.child("imageUrl").toString()
+                }
+                steps.add(
+                    j,
+                    Step(
+                        imageUrl,
+                        stepSnapshot.child("stepText").toString()
+                    )
+                )
+            }
+            recipes.add(
+                i,
+                Recipe(
+                    recipeSnapshot.child("name").toString(),
+                    recipeSnapshot.child("imageUrl").toString(),
+                    steps,
+                    ingredients
+                )
+
+            )
+        }
+        return recipes
+    }
+
+/*
     // This is just dummy data, until we can implement a proper repository for recipe data
     return listOf(
         Recipe(
@@ -188,3 +242,4 @@ fun loadHealthInfo(): List<HealthInfoPage> {
         ),
     )
 }*/
+}
