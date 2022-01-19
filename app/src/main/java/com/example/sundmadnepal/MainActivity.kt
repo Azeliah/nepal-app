@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
         auth = Firebase.auth
-        if(auth.currentUser == null) {
+        if (auth.currentUser == null) {
             startActivity(Intent(this, AnonymousSignInActivity::class.java))
             finish()
             return

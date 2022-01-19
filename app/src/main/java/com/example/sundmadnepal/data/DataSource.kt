@@ -5,10 +5,10 @@ import com.google.firebase.database.DatabaseReference
 class DataSource {
 
     constructor(dbReference: DatabaseReference) {
-            // TODO: Populate with data using reference
-        }
+        // TODO: Populate with data using reference
     }
 }
+
 
 // TODO: Redefine loadRecipes, loadQuestions, loadHealthInfo
 

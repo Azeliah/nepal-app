@@ -31,8 +31,10 @@ class AnonymousSignInActivity : Activity() {
                     Log.d(tag, "signInAnonymously:success")
                 } else {
                     Log.w(tag, "signInAnonymously:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
     }
