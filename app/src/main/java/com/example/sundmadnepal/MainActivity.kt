@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         db.child("dummy_data").get().addOnSuccessListener {
             Log.i("firebase", "Got value $(it.value)")
             dataSource = DataSource(it)
-        }.addOnFailureListener{
+        }.addOnFailureListener {
             Log.e("firebase", "Error getting data", it)
         }
         // Hide the action bar at the top
