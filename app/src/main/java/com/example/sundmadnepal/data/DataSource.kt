@@ -1,16 +1,23 @@
 package com.example.sundmadnepal.data
 
-import com.example.sundmadnepal.R
-import com.example.sundmadnepal.model.*
-import com.example.sundmadnepal.model.ElementType.*
+import com.google.firebase.database.DatabaseReference
 
+class DataSource {
 
-// TODO: Import from database.
+    constructor(dbReference: DatabaseReference) {
+            // TODO: Populate with data using reference
+        }
+    }
+}
+
+// TODO: Redefine loadRecipes, loadQuestions, loadHealthInfo
+
+/*
 fun loadRecipes(): List<Recipe> {
 
     // This is just dummy data, until we can implement a proper repository for recipe data
     return listOf(
-        /*Recipe(
+        Recipe(
             id = 1,
             name = R.string.dahl,
             image = R.drawable.dahl
@@ -44,7 +51,7 @@ fun loadRecipes(): List<Recipe> {
                 Ingredient(3, R.drawable.potatoes, "3 potatoes in either squares or whole")
             )
 
-        )*/
+        )
         Recipe(
             id = 1,
             name = R.string.nutritious_flower,
@@ -165,4 +172,4 @@ fun loadHealthInfo(): List<HealthInfoPage> {
             content = placeholderPage,
         ),
     )
-}
+}*/
