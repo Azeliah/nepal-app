@@ -29,8 +29,8 @@
     <string name="next_question">अर्को प्रश्न</string>
     <string name="correct">सहि</string>
     <string name="wrong">गलत</string>
-    <string name="zeroToSix1">The child should be examined at the health institution on the third day within 24 hours of birth and at 4 months.</string>
-    <string name="zeroToSix2">The first yellow milk of the mother should be fed as soon as possible (within 1 hour) after the birth of the newborn baby.</string>
+    <string name="zeroToSix1">बच्चा जन्मेको २४ घण्टा मा तेस्रो दिनमा र ४ महिनामा स्वास्थ संस्था मा गई जाँच गराउनु पर्छ।</string>
+    <string name="zeroToSix2">नवजात शिशु जन्मिएपछि सकेसम्म चाँडो ( १ घण्टा भित्र) आमाको पहिलो पहेंलो ( बिगौती ) दूध खुवाउनुपर्छ।</string>
     <string name="strengthening_food">शरीर निर्माण खाना (शक्ति)</string>
     <string name="strengthening_food_description">१. शरीरको वृद्धि र विकासमा मद्दत गर्छ।\n२. शरीरका सबै तन्तुहरूको वृद्धि र मरम्मतको लागि आवश्यक छ।\n३. घाउ निको हुन्छ ।\n४. रोगसँग लड्न प्रतिरोधात्मक क्षमता बढाउनुहोस्।</string>
     <string name="protective_food">सुरक्षात्मक खाना</string>
