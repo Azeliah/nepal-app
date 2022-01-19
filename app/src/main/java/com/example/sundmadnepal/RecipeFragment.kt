@@ -1,6 +1,7 @@
 package com.example.sundmadnepal
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,16 +13,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.IngredientAdapter
 import com.example.sundmadnepal.adapter.StepAdapter
 import com.example.sundmadnepal.data.loadRecipes
+import com.example.sundmadnepal.helpers.TtsManager
 import com.example.sundmadnepal.model.Ingredient
-import com.example.sundmadnepal.model.Recipe
 import com.example.sundmadnepal.model.Step
+import java.util.*
 
 private const val TAG = "RecipeFragment"
 
 class RecipeFragment : Fragment() {
 
     private var recipeId : Int = 1 //This is set to 1, so that if something "goes wrong" it will still load the first recipe... for now
-
+    private val ttsMan = TtsManager()
+    private var tts : TextToSpeech? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,9 @@ class RecipeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Initialize tts
+        tts = ttsMan.initializeTts(requireContext(), Locale("ne_NP"))
 
         val recipeInUse = loadRecipes().elementAt(recipeId-1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
@@ -68,10 +74,21 @@ class RecipeFragment : Fragment() {
 
     private fun stepOnclick(step: Step) {
         Log.d(TAG, "Ingredient clicked: $step")
+        ttsMan.speakOut(step.stepText)
     }
 
     private fun ingredientOnclick(ingredient: Ingredient) {
         //TODO implement if needed (directions), maybe just use a pop up ?
         Log.d(TAG, "Ingredient clicked: $ingredient")
+        ttsMan.speakOut(ingredient.measurements)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        if (tts != null) {
+            Log.w("TTS", "Stopping/shutting down TTS")
+            tts!!.stop()
+            tts!!.shutdown()
+        }
     }
 }
