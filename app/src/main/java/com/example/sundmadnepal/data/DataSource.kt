@@ -78,11 +78,28 @@ fun loadRecipes(): List<Recipe> {
 }
 
 // Dummy data for quiz questions
-fun loadQuestions(): List<QuizQuestion> {
-    return listOf(
-        QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
-        QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
-        QuizQuestion("Is it healthy for your child to eat chips", null, false)
+fun loadQuestions(): MutableList<QuizQuestion> {
+    return mutableListOf(
+        QuizQuestion(R.string.healthy_question, R.drawable.fried_chicken, false),
+        QuizQuestion(R.string.healthy_question, R.drawable.potatoes, true),
+        QuizQuestion(R.string.chips_question, null, false),
+        QuizQuestion(R.string.water_question, null, false),
+        QuizQuestion(R.string.strength_question, R.drawable.bananas, false),
+        QuizQuestion(R.string.strength_question, R.drawable.potatoes, true),
+        QuizQuestion(R.string.strength_question, R.drawable.corn, true),
+        QuizQuestion(R.string.strength_question, R.drawable.ghee, true),
+        QuizQuestion(R.string.protective_question, R.drawable.citrus, true),
+        QuizQuestion(R.string.protective_question, R.drawable.bananas, true),
+        QuizQuestion(R.string.protective_question, R.drawable.meat, false),
+        QuizQuestion(R.string.protective_question, R.drawable.pumpkin_seeds, false),
+        QuizQuestion(R.string.energy_question, R.drawable.eggs, true),
+        QuizQuestion(R.string.energy_question, R.drawable.walnut, true),
+        QuizQuestion(R.string.energy_question, R.drawable.milk, true),
+        QuizQuestion(R.string.energy_question, R.drawable.black_soybean, true),
+        QuizQuestion(R.string.energy_question, R.drawable.green_gram, true),
+        QuizQuestion(R.string.energy_question, R.drawable.sugar_cane, false),
+        QuizQuestion(R.string.energy_question, R.drawable.sweet_potato, false),
+        QuizQuestion(R.string.energy_question, R.drawable.taro_root, false),
     )
 }
 
