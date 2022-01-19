@@ -2,6 +2,7 @@ package com.example.sundmadnepal
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
@@ -11,7 +12,7 @@ import com.example.sundmadnepal.data.DataSource
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navControllerTop: NavController
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var db: FirebaseDatabase
+    private lateinit var db: DatabaseReference
     public lateinit var dataSource: DataSource
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,8 +39,13 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        db = Firebase.database
-        dataSource = DataSource(db.reference.child("dummy_data"))
+        db = Firebase.database.reference
+        db.child("dummy_data").get().addOnSuccessListener {
+            Log.i("firebase", "Got value $(it.value)")
+            dataSource = DataSource(it)
+        }.addOnFailureListener{
+            Log.e("firebase", "Error getting data", it)
+        }
         // Hide the action bar at the top
         supportActionBar?.hide()
 

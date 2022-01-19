@@ -1,11 +1,26 @@
 package com.example.sundmadnepal.data
 
-import com.google.firebase.database.DatabaseReference
+import com.example.sundmadnepal.model.FoodItem
+import com.example.sundmadnepal.model.HealthInfoPage
+import com.example.sundmadnepal.model.QuizQuestion
+import com.example.sundmadnepal.model.Recipe
+import com.google.firebase.database.DataSnapshot
+
 
 class DataSource {
+    lateinit var foodItemList: List<FoodItem>
+    lateinit var recipeList: List<Recipe>
+    lateinit var quizQuestionList: List<QuizQuestion>
+    lateinit var healthInfoPageList: List<HealthInfoPage>
 
-    constructor(dbReference: DatabaseReference) {
-        // TODO: Populate with data using reference
+    constructor(dataSnapshot: DataSnapshot) {
+        var foodItemData = dataSnapshot.child("foodItem").children
+        for (e in foodItemData) {
+
+        }
+        var recipeData = dataSnapshot.child("recipe").children
+        var quizQuestionData = dataSnapshot.child("quiz_question").children
+        var healthInfoPageData = dataSnapshot.child("health_info_page").children
     }
 }
 
