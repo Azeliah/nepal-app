@@ -1,8 +1,19 @@
 package com.example.sundmadnepal.model
 
-// TODO: Set up for database import (Finish recipe part first)
-data class QuizQuestion(
-    val question: String,
-    val imageUrl: String?,
-    val answer: Boolean
-)
+class QuizQuestion {
+    var question: String? = null
+    var imageUrl: String? = null
+    var answer: Boolean = false
+
+    constructor() // Empty constructor for Firebase serialization
+
+    constructor(
+        question: String?,
+        imageUrl: String?,
+        answer: Boolean
+    ) {
+        this.question = question
+        this.imageUrl = imageUrl
+        this.answer = answer
+    }
+}

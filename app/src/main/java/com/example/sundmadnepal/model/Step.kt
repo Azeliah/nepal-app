@@ -1,7 +1,19 @@
 package com.example.sundmadnepal.model
 
-data class Step(
-    val id: Int,
-    val imageUrl: String?,
-    val stepText: String,
-)
+class Step {
+    var id: Int? = null
+    var imageUrl: String? = null
+    var stepText: String? = null
+
+    constructor() // Empty constructor for Firebase serialization
+
+    constructor(
+        id: Int?,
+        imageUrl: String?,
+        stepText: String?
+    ) {
+        this.id = id
+        this.imageUrl = imageUrl
+        this.stepText = stepText
+    }
+}

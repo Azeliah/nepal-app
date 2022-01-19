@@ -1,10 +1,22 @@
 package com.example.sundmadnepal.model
 
-// TODO: Set up for database?
+class HealthInfoPage {
+    var id: Int? = null
+    var title: String? = null
+    var imageUrl: String? = null
+    var content: List<HealthInfoElement>? = null
 
-data class HealthInfoPage(
-    val id: Int,
-    val title: String,
-    val imageUrl: String,
-    val content: List<HealthInfoElement>,
-)
+    constructor() // Empty constructor for Firebase serialization
+
+    constructor(
+        id: Int,
+        title: String,
+        imageUrl: String,
+        content: List<HealthInfoElement>
+    ) {
+        this.id = id
+        this.title = title
+        this.imageUrl = imageUrl
+        this.content = content
+    }
+}

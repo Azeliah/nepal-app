@@ -7,8 +7,8 @@ class Recipe {
     var stepList: List<Step>? = null
     var ingredientList: List<Ingredient>? = null
 
-    // TODO: Find out if this constructor is necessary. Code lab suggests that it is.
-    constructor() // Empty constructor for Firebase serialization (Is this needed??)
+
+    constructor() // Empty constructor for Firebase serialization
 
     constructor(
         id: Int?,

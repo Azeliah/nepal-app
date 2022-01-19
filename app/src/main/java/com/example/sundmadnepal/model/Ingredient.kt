@@ -1,7 +1,19 @@
 package com.example.sundmadnepal.model
 
-data class Ingredient(
-    val id: Int,
-    val foodItem: FoodItem,
-    val measurement: String
-)
+class Ingredient {
+    var id: Int? = null
+    var foodItem: FoodItem? = null
+    var measurement: String? = null
+
+    constructor() // Empty constructor for Firebase serialization
+
+    constructor(
+        id: Int?,
+        foodItem: FoodItem?,
+        measurement: String?
+    ) {
+        this.id = id
+        this.foodItem = foodItem
+        this.measurement = measurement
+    }
+}

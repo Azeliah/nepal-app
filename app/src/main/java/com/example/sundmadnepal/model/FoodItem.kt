@@ -1,6 +1,16 @@
 package com.example.sundmadnepal.model
 
-data class FoodItem(
-    val name: String,
-    val imageUrl: String
-)
+class FoodItem {
+    var name: String? = null
+    var imageUrl: String? = null
+
+    constructor() // Empty constructor for Firebase serialization
+
+    constructor(
+        name: String?,
+        imageUrl: String?
+    ) {
+        this.name = name
+        this.imageUrl = imageUrl
+    }
+}
