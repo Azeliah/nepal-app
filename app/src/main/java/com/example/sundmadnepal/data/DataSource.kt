@@ -2,24 +2,35 @@ package com.example.sundmadnepal.data
 
 import android.util.Log
 import com.example.sundmadnepal.model.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
-class DataSource(ds: DataSnapshot) {
+object DataSource {
 
+    var auth: FirebaseAuth = Firebase.auth
+    private var db: DatabaseReference = Firebase.database.reference
+    private lateinit var ds: DataSnapshot
     lateinit var recipes: List<Recipe>
     lateinit var questions: List<QuizQuestion>
     lateinit var healthInfo: List<HealthInfoPage>
 
-
     init {
+        db.child("dummy_data").get().addOnSuccessListener {
+            Log.i("firebase", "Got value $(it.value)")
+            ds = it
+        }.addOnFailureListener {
+            Log.e("firebase", "Error getting data", it)
+        }
+
         loadRecipes(ds)
         loadQuestions(ds)
         loadHealthInfo(ds)
     }
-
-// TODO: Redefine loadRecipes, loadQuestions, loadHealthInfo
-
 
     private fun loadRecipes(ds: DataSnapshot) {
         // TODO: Add security to ward off null elements.
