@@ -2,16 +2,15 @@ package com.example.sundmadnepal
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.sundmadnepal.data.DataSource
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
@@ -19,9 +18,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navControllerTop: NavController
 
     private lateinit var auth: FirebaseAuth
-    private lateinit var db: DatabaseReference
-    lateinit var dataSource: DataSource
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,7 +32,6 @@ class MainActivity : AppCompatActivity() {
             finish()
             return
         }
-
         // Hide the action bar at the top
         supportActionBar?.hide()
 
