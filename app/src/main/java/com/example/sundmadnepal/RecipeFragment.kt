@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.IngredientAdapter
 import com.example.sundmadnepal.adapter.StepAdapter
-import com.example.sundmadnepal.data.loadRecipes
+import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.Ingredient
 import com.example.sundmadnepal.model.Step
 
@@ -43,8 +43,9 @@ class RecipeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val recipeInUse = loadRecipes().elementAt(recipeId - 1)
+        val recipeInUse = DataSource.recipes.elementAt(recipeId - 1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
+        // TODO: Fix image fetch
         recipeImage.setImageResource(recipeInUse.image ?: R.drawable.dahl)
 
         //Ingredient Adapter

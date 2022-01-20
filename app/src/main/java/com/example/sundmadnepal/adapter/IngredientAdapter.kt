@@ -32,8 +32,8 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
         fun bind(ingredient: Ingredient) {
             currentIngredient = ingredient
 
-            ingredientTextView.text = ingredient.measurements
-            ingredientImageView.setImageResource(
+            ingredientTextView.text = ingredient.measurement
+            ingredientImageView.setImageResource( // TODO: Fix image resource
                 ingredient.image ?: R.drawable.pudding_ingredienses
             )
         }

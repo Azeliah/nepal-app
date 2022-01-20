@@ -1,10 +1,10 @@
 package com.example.sundmadnepal.model
 
 class HealthInfoPage {
-    var id: Int? = null
-    var title: String? = null
-    var imageUrl: String? = null
-    var content: List<HealthInfoElement>? = null
+    var id: Int = -1
+    var title: String = ""
+    var imageUrl: String = ""
+    var content: List<HealthInfoElement> = emptyList()
 
     constructor() // Empty constructor for Firebase serialization
 

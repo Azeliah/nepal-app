@@ -32,6 +32,7 @@ class HealthInfoAdapter(private val onClick: (HealthInfoPage) -> Unit) :
             currentHealthInfoPage = healthInfoPage
 
             healthInfoTextView.setText(healthInfoPage.title)
+            // TODO: Change image resource
             healthInfoImageView.setImageResource(healthInfoPage.image)
         }
     }

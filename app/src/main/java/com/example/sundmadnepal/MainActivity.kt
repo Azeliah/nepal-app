@@ -9,6 +9,9 @@ import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.sundmadnepal.data.DataSource
+import com.example.sundmadnepal.model.HealthInfoPage
+import com.example.sundmadnepal.model.QuizQuestion
+import com.example.sundmadnepal.model.Recipe
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -22,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var db: DatabaseReference
-    public lateinit var dataSource: DataSource
+    lateinit var dataSource: DataSource
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,13 +42,6 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        db = Firebase.database.reference
-        db.child("dummy_data").get().addOnSuccessListener {
-            Log.i("firebase", "Got value $(it.value)")
-            dataSource = DataSource(it)
-        }.addOnFailureListener {
-            Log.e("firebase", "Error getting data", it)
-        }
         // Hide the action bar at the top
         supportActionBar?.hide()
 

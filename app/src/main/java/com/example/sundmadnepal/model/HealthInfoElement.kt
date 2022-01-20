@@ -1,8 +1,8 @@
 package com.example.sundmadnepal.model
 
 class HealthInfoElement {
-    var type: ElementType? = null
-    var contentRef: String? = null
+    var type: ElementType = ElementType.PARAGRAPH
+    var contentRef: String = ""
 
     constructor() // Empty constructor for Firebase serialization
 

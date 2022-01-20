@@ -9,13 +9,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.sundmadnepal.data.loadHealthInfo
+import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.ElementType.IMAGE
 import com.example.sundmadnepal.model.ElementType.PARAGRAPH
 import com.example.sundmadnepal.model.HealthInfoPage
 
 class HealthInfoPageFragment : Fragment() {
-
+    private var dataSource = DataSource
     private var pageId: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,9 +39,11 @@ class HealthInfoPageFragment : Fragment() {
 
         val linLayout: LinearLayout = view.findViewById(R.id.healthInfoLinLayout)
 
-        val healthInfoPage: HealthInfoPage = loadHealthInfo().elementAt(pageId - 1)
+        val healthInfoPage: HealthInfoPage = dataSource.healthInfo.elementAt(pageId - 1)
 
-        for (element in healthInfoPage.content) when (element.type) {
+        // TODO: Change use of contentRef
+
+        for (element in healthInfoPage.content!!) when (element.type) {
             PARAGRAPH -> {
                 val textView = newTextView(element.contentRef, view.context)
                 linLayout.addView(textView)

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.RecipesAdapter
+import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.data.loadRecipes
 import com.example.sundmadnepal.model.Recipe
 
@@ -28,7 +29,7 @@ class RecipesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val recipesAdapter = RecipesAdapter { recipe -> recipeOnClick(recipe) }
-        recipesAdapter.submitList(loadRecipes())
+        recipesAdapter.submitList(DataSource.recipes)
 
         val recipesListView = view.findViewById<RecyclerView>(R.id.recipes_list)
         recipesListView.adapter = recipesAdapter
@@ -37,7 +38,7 @@ class RecipesFragment : Fragment() {
 
     private fun recipeOnClick(recipe: Recipe) {
         val action =
-            RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id)
+            RecipesFragmentDirections.actionRecipesFragmentToRecipeFragment(recipeId = recipe.id!!)
         findNavController().navigate(action)
         Log.d(TAG, "Recipe card clicked: $recipe")
     }

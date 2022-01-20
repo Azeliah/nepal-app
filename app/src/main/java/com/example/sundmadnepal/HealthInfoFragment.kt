@@ -10,12 +10,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.HealthInfoAdapter
-import com.example.sundmadnepal.data.loadHealthInfo
+import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.HealthInfoPage
 
 private const val TAG = "HealthInfoFragment"
 
 class HealthInfoFragment : Fragment() {
+
+    private val healthInfo = DataSource.healthInfo
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +32,7 @@ class HealthInfoFragment : Fragment() {
 
         val healthInfoAdapter =
             HealthInfoAdapter { healthInfoPage -> healthInfoOnClick(healthInfoPage) }
-        healthInfoAdapter.submitList(loadHealthInfo())
+        healthInfoAdapter.submitList(healthInfo)
 
         val layoutManager = GridLayoutManager(activity, 2)
 
@@ -44,7 +46,7 @@ class HealthInfoFragment : Fragment() {
         Log.d(TAG, "Health-info card pressed with id=${healthInfoPage.id}")
 
         val action =
-            HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoPageFragment(pageId = healthInfoPage.id)
+            HealthInfoFragmentDirections.actionHealthInfoFragmentToHealthInfoPageFragment(pageId = healthInfoPage.id!!)
         findNavController().navigate(action)
     }
 }

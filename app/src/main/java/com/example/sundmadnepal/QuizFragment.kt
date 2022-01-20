@@ -8,12 +8,12 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import com.example.sundmadnepal.data.loadQuestions
+import com.example.sundmadnepal.data.DataSource
 
 class QuizFragment : Fragment() {
 
     // Get questions for the quiz
-    private val questions = loadQuestions()
+    private val questions = DataSource.questions
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +29,7 @@ class QuizFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // TODO: Fix image resource fetch
 
         // Link to all the elements of the fragment
         var questionText = view.findViewById<TextView>(R.id.quizQuestion)
@@ -50,7 +51,6 @@ class QuizFragment : Fragment() {
 
         // Set the text of the first question
         questionText.text = currQuestion.question
-
         // Set the image for the question, if it has an image
         if (currQuestion.imageResourceId != null) {
             questionImage.visibility = View.VISIBLE
