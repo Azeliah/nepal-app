@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sundmadnepal.adapter.RecipesAdapter
 import com.example.sundmadnepal.data.DataSource
-import com.example.sundmadnepal.data.loadRecipes
 import com.example.sundmadnepal.model.Recipe
 
 private const val TAG = "RecipesFragment"

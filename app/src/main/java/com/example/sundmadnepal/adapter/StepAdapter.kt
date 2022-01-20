@@ -9,8 +9,11 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.Step
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class StepAdapter(private val onClick: (Step) -> Unit) :
     ListAdapter<Step, StepAdapter.StepViewHolder>(StepDiffCallback) {
@@ -35,11 +38,12 @@ class StepAdapter(private val onClick: (Step) -> Unit) :
 
             stepTextView.text = step.stepText
 
-            // TODO: Import image with URL from database.
-
             //If image of step is null, then hide the imageview, so there is no empty space in the recyclerview
-            if (step.image != null) {
-                stepImageView.setImageResource(step.image)
+            if (step.imageUrl != null) {
+                val storageReference = Firebase.storage.getReferenceFromUrl(step.imageUrl!!)
+                Glide.with(itemView)
+                    .load(storageReference)
+                    .into(stepImageView)
             } else {
                 stepImageView.isVisible = false
             }

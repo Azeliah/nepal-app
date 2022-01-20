@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.HealthInfoPage
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class HealthInfoAdapter(private val onClick: (HealthInfoPage) -> Unit) :
     ListAdapter<HealthInfoPage, HealthInfoAdapter.HealthInfoViewHolder>(HealthInfoDiffCallback) {
@@ -33,7 +36,10 @@ class HealthInfoAdapter(private val onClick: (HealthInfoPage) -> Unit) :
 
             healthInfoTextView.setText(healthInfoPage.title)
             // TODO: Change image resource
-            healthInfoImageView.setImageResource(healthInfoPage.image)
+            val storageReference = Firebase.storage.getReferenceFromUrl(healthInfoPage.imageUrl)
+            Glide.with(itemView)
+                .load(storageReference)
+                .into(healthInfoImageView)
         }
     }
 

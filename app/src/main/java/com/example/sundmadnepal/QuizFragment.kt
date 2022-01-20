@@ -8,7 +8,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.data.DataSource
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class QuizFragment : Fragment() {
 
@@ -29,7 +32,6 @@ class QuizFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        // TODO: Fix image resource fetch
 
         // Link to all the elements of the fragment
         var questionText = view.findViewById<TextView>(R.id.quizQuestion)
@@ -52,9 +54,12 @@ class QuizFragment : Fragment() {
         // Set the text of the first question
         questionText.text = currQuestion.question
         // Set the image for the question, if it has an image
-        if (currQuestion.imageResourceId != null) {
+        if (currQuestion.imageUrl != null) {
             questionImage.visibility = View.VISIBLE
-            questionImage.setImageResource(currQuestion.imageResourceId!!)
+            val storageReference = Firebase.storage.getReferenceFromUrl(currQuestion.imageUrl!!)
+            Glide.with(this)
+                .load(storageReference)
+                .into(questionImage)
         } else {
             questionImage.visibility = View.INVISIBLE
         }
@@ -107,9 +112,12 @@ class QuizFragment : Fragment() {
             // Update the question text and image
             questionText.text = currQuestion.question
 
-            if (currQuestion.imageResourceId != null) {
+            if (currQuestion.imageUrl != null) {
                 questionImage.visibility = View.VISIBLE
-                questionImage.setImageResource(currQuestion.imageResourceId!!)
+                val storageReference = Firebase.storage.getReferenceFromUrl(currQuestion.imageUrl!!)
+                Glide.with(this)
+                    .load(storageReference)
+                    .into(questionImage)
             } else {
                 questionImage.visibility = View.INVISIBLE
             }

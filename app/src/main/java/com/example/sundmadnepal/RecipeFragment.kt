@@ -9,11 +9,14 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.adapter.IngredientAdapter
 import com.example.sundmadnepal.adapter.StepAdapter
 import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.Ingredient
 import com.example.sundmadnepal.model.Step
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 private const val TAG = "RecipeFragment"
 
@@ -45,8 +48,11 @@ class RecipeFragment : Fragment() {
 
         val recipeInUse = DataSource.recipes.elementAt(recipeId - 1)
         val recipeImage = view.findViewById<ImageView>(R.id.recipe_image)
-        // TODO: Fix image fetch
-        recipeImage.setImageResource(recipeInUse.image ?: R.drawable.dahl)
+        val storageReference = Firebase.storage.getReferenceFromUrl(recipeInUse.imageUrl)
+
+        Glide.with(this)
+            .load(storageReference)
+            .into(recipeImage)
 
         //Ingredient Adapter
         val ingredientAdapter = IngredientAdapter { ingredient -> ingredientOnclick(ingredient) }

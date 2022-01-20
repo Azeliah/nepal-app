@@ -9,10 +9,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.data.DataSource
 import com.example.sundmadnepal.model.ElementType.IMAGE
 import com.example.sundmadnepal.model.ElementType.PARAGRAPH
 import com.example.sundmadnepal.model.HealthInfoPage
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class HealthInfoPageFragment : Fragment() {
     private var dataSource = DataSource
@@ -41,15 +44,18 @@ class HealthInfoPageFragment : Fragment() {
 
         val healthInfoPage: HealthInfoPage = dataSource.healthInfo.elementAt(pageId - 1)
 
-        // TODO: Change use of contentRef
-
-        for (element in healthInfoPage.content!!) when (element.type) {
+        for (element in healthInfoPage.content) when (element.type) {
             PARAGRAPH -> {
-                val textView = newTextView(element.contentRef, view.context)
+                val textView = TextView(view.context)
+                textView.text = element.contentRef
                 linLayout.addView(textView)
             }
             IMAGE -> {
-                val imageView = newImageView(element.contentRef, view.context)
+                val storageReference = Firebase.storage.getReferenceFromUrl(element.contentRef)
+                val imageView = ImageView(view.context)
+                Glide.with(this)
+                    .load(storageReference)
+                    .into(imageView)
                 linLayout.addView(imageView)
             }
         }

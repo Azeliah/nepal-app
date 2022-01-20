@@ -8,8 +8,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.sundmadnepal.R
 import com.example.sundmadnepal.model.Ingredient
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 
 class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
     ListAdapter<Ingredient, IngredientAdapter.IngredientViewHolder>(IngredientDiffCallback) {
@@ -33,9 +36,10 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
             currentIngredient = ingredient
 
             ingredientTextView.text = ingredient.measurement
-            ingredientImageView.setImageResource( // TODO: Fix image resource
-                ingredient.image ?: R.drawable.pudding_ingredienses
-            )
+            val storageReference = Firebase.storage.getReferenceFromUrl(ingredient.foodItem!!.imageUrl)
+            Glide.with(itemView)
+                .load(storageReference)
+                .into(ingredientImageView)
         }
     }
 
