@@ -36,7 +36,8 @@ class IngredientAdapter(private val onClick: (Ingredient) -> Unit) :
             currentIngredient = ingredient
 
             ingredientTextView.text = ingredient.measurement
-            val storageReference = Firebase.storage.getReferenceFromUrl(ingredient.foodItem!!.imageUrl)
+            val storageReference =
+                Firebase.storage.getReferenceFromUrl(ingredient.foodItem!!.imageUrl)
             Glide.with(itemView)
                 .load(storageReference)
                 .into(ingredientImageView)
