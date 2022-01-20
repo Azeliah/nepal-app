@@ -54,7 +54,7 @@ object DataSource {
                 val foodItemKey = ingredientSnapshot.child("foodItem").toString()
                 var targetFoodItem: FoodItem? = null
                 for (ele in foodItems) {
-                    if (ele.id.equals(foodItemKey)) {
+                    if (ele.id == foodItemKey) {
                         targetFoodItem = ele
                         break
                     }
@@ -66,7 +66,8 @@ object DataSource {
                 ingredients.add(
                     j,
                     Ingredient(
-                        targetFoodItem,
+                        j,
+                        targetFoodItem!!,
                         ingredientSnapshot.child("measurement").toString()
                     )
                 )
@@ -82,6 +83,7 @@ object DataSource {
                 steps.add(
                     j,
                     Step(
+                        j,
                         imageUrl,
                         stepSnapshot.child("stepText").toString()
                     )
@@ -90,6 +92,7 @@ object DataSource {
             recipeList.add(
                 i,
                 Recipe(
+                    i,
                     recipeSnapshot.child("name").toString(),
                     recipeSnapshot.child("imageUrl").toString(),
                     steps,
@@ -156,4 +159,6 @@ object DataSource {
 
         healthInfo = healthInfoPages
     }
+
+    // TODO: Make fun getImage(link) and private fun getStorage
 }

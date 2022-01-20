@@ -1,9 +1,9 @@
 package com.example.sundmadnepal.model
 
 class FoodItem {
-    var id: String? = null
-    var name: String? = null
-    var imageUrl: String? = null
+    var id: String = ""
+    var name: String = ""
+    var imageUrl: String = ""
 
     constructor() // Empty constructor for Firebase serialization
 
@@ -12,6 +12,7 @@ class FoodItem {
         name: String,
         imageUrl: String
     ) {
+        this.id = id
         this.name = name
         this.imageUrl = imageUrl
     }

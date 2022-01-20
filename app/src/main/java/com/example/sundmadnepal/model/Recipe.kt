@@ -1,20 +1,23 @@
 package com.example.sundmadnepal.model
 
 class Recipe {
-    var name: String? = null
-    var imageUrl: String? = null
-    var stepList: List<Step>? = null
-    var ingredientList: List<Ingredient>? = null
+    var id: Int = -1
+    var name: String = ""
+    var imageUrl: String = ""
+    var stepList: List<Step> = emptyList()
+    var ingredientList: List<Ingredient> = emptyList()
 
 
     constructor() // Empty constructor for Firebase serialization
 
     constructor(
-        name: String?,
-        imageUrl: String?,
-        stepList: List<Step>?,
-        ingredientList: List<Ingredient>?
+        id: Int,
+        name: String,
+        imageUrl: String,
+        stepList: List<Step>,
+        ingredientList: List<Ingredient>
     ) {
+        this.id = id
         this.name = name
         this.imageUrl = imageUrl
         this.stepList = stepList

@@ -1,14 +1,14 @@
 package com.example.sundmadnepal.model
 
 class QuizQuestion {
-    var question: String? = null
+    var question: String = ""
     var imageUrl: String? = null
     var answer: Boolean = false
 
     constructor() // Empty constructor for Firebase serialization
 
     constructor(
-        question: String?,
+        question: String,
         imageUrl: String?,
         answer: Boolean
     ) {
