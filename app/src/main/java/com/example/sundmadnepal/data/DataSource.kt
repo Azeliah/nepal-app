@@ -73,16 +73,56 @@ fun loadRecipes(): List<Recipe> {
                 Step(4, null, "४: पाक्दै गरेको जाउलोमा पिसेको वा मसिनो पारेर टुक्रा गरेको साग पनि मिसाउने र एकछिन छोपेर पकाउने।\n"),
                 Step(5, null, "५: स्वादको लागि थोरै आयोडिन युक्त नून हाल्ने ।")
             )
+        ),
+        Recipe(
+            id=3,
+            name = R.string.pumpking_pudding,
+            image = R.drawable.pumpkin_ready_in_bowl,
+            ingredientList = listOf(
+                Ingredient(1, R.drawable.egg, "अण्डा"),
+                Ingredient(2, R.drawable.sugar, "चिनी : स्वाद अनुसार ( १ चियाचम्चा भन्दा बढी नहाल्ने , फर्सी गुलियो छ भने नहाल्दा हुन्छ )"),
+                Ingredient(3, R.drawable.corn_flour, "मकैको पिठो : ४ चिया चम्चा"),
+                Ingredient(4, R.drawable.salt, "नुन : थोरै एक चिम्टी"),
+                Ingredient(5, R.drawable.milk, "दूध : २ ग्लास"),
+                Ingredient(6, R.drawable.ghee, "घिहु : २ चियाचम्चा"),
+                Ingredient(7, R.drawable.pumpkin_paste_2_glasses, "पाकेको फर्सीको लेदो : २ ग्लास ( सकेसम्म भित्र पनि गाढा सुन्तला रंगको )"),
+                Ingredient(8, R.drawable.walnut, "ओखर : स्वाद अनुसार")
+            ),
+            stepList = listOf(
+                Step(1, null, "१.  एउटा कचौरामा अण्डा चिनी र मकैको पीठो राखेर फित्ने"),
+                Step(2, null, "२. अर्को भाँडामा उम्लिएर सेलाएको दूध र माथिको अण्डाको घोलमा मिसाएर चलाउने र पकाउने र अलि बाक्लो भएपछि आगो बाट झिक्ने र घिऊ र फर्सीको पेस्ट वा लेदो हाल्ने र राम्ररी सबै मिसिने गरी चलाउने ।"),
+                Step(3, null, "३. अब त्यसमा ओखर पिनेर वा त्यसको टुक्रा र नुन हालेर चलाउने र खुवाउन काे लागि तयार भयो ।"),
+                Step(4, null, "नोट : फर्सी काे पेस्ट ( लेदो )"),
+                Step(5, null, "बनाउने तरिका : पाकेको पहेंलो फर्सी लाई सफासँग धुने र २ टुक्रा पारेर सबै बियाँ र गुदी झिक्ने ।"),
+                Step(6, null, "अब फर्सी लाई पाक्ने गरी कम मात्रामा पानी हालेर वा केराको पातमा बेरेर आगोमा पोलेर पकाउने । पाकेको फर्सीलाई बिस्तारै पानीबाट वा आगोबाट निकाल्ने र बोक्रा नआउने गरी चम्चाले खुर्केर निकाल्ने । निकालेको फर्सीलाई चम्चाले फिटेर फर्सीको पेस्ट वा लेदो बनाइन्छ।"),
+            )
         )
     )
 }
 
 // Dummy data for quiz questions
-fun loadQuestions(): List<QuizQuestion> {
-    return listOf(
-        QuizQuestion("Is this healthy?", R.drawable.fried_chicken, false),
-        QuizQuestion("Is this healthy?", R.drawable.potatoes, true),
-        QuizQuestion("Is it healthy for your child to eat chips", null, false)
+fun loadQuestions(): MutableList<QuizQuestion> {
+    return mutableListOf(
+        QuizQuestion(R.string.healthy_question, R.drawable.fried_chicken, false),
+        QuizQuestion(R.string.healthy_question, R.drawable.potatoes, true),
+        QuizQuestion(R.string.chips_question, null, false),
+        QuizQuestion(R.string.water_question, null, false),
+        QuizQuestion(R.string.strength_question, R.drawable.bananas, false),
+        QuizQuestion(R.string.strength_question, R.drawable.potatoes, true),
+        QuizQuestion(R.string.strength_question, R.drawable.corn, true),
+        QuizQuestion(R.string.strength_question, R.drawable.ghee, true),
+        QuizQuestion(R.string.protective_question, R.drawable.citrus, true),
+        QuizQuestion(R.string.protective_question, R.drawable.bananas, true),
+        QuizQuestion(R.string.protective_question, R.drawable.meat, false),
+        QuizQuestion(R.string.protective_question, R.drawable.pumpkin_seeds, false),
+        QuizQuestion(R.string.energy_question, R.drawable.eggs, true),
+        QuizQuestion(R.string.energy_question, R.drawable.walnut, true),
+        QuizQuestion(R.string.energy_question, R.drawable.milk, true),
+        QuizQuestion(R.string.energy_question, R.drawable.black_soybean, true),
+        QuizQuestion(R.string.energy_question, R.drawable.green_gram, true),
+        QuizQuestion(R.string.energy_question, R.drawable.sugar_cane, false),
+        QuizQuestion(R.string.energy_question, R.drawable.sweet_potato, false),
+        QuizQuestion(R.string.energy_question, R.drawable.taro_root, false),
     )
 }
 
@@ -108,42 +148,204 @@ fun loadHealthInfo(): List<HealthInfoPage> {
         )
     )
 
+    val generel_health_info = listOf(
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.vaccination,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.healt_info_generel_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.growth_monitoring,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.healt_info_generel_2,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.when_to_wash_hands,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.vitamin_a,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.healt_info_generel_3,
+        ),
+    )
+
+    val pregnant = listOf(
+        HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.pregnant_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.pregnant_worm,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.pregnant_2,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.balanced_diet_with_meat,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.balanced_diet_no_meat,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.pregnant_3,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.pregnant_4,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.pregnant_5,
+        ),
+    )
+
+    val zero_to_six_months = listOf(
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.go_to_health_post,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.zero_six_months_only_breast_feeding,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_2,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_3,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.breast_feeding_10_times,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_4,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_5,
+        ),HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.zero_to_six_6,
+        ),
+    )
+
+    val six_to_nine_months = listOf(
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.go_to_health_post,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.six_to_nine_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.six_nine_breast_feeding_and_feeding_logo,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.six_to_nine_2,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.jaulo_and_litto,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.six_to_nine_3,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.six_to_nine_4,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.two_children_logo_salt,
+        ),HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.six_to_nine_5,
+        ),
+    )
+
+    val nine_to_twelve_months = listOf(
+        HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.nine_twelve_months_with_foods,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.nine_to_twelve_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.clean_water_big,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.nine_to_twelve_2,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.hand_washing,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.nine_to_twelve_3,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.no_snacks_poster,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.nine_to_twelve_4,
+        ),
+    )
+
+    val twelve_to_twentyfour_months = listOf(
+        HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.twelve_to_twentyfour_1,
+        ), HealthInfoElement(
+            type = IMAGE,
+            contentRef = R.drawable.twelve_twentyfour_months_with_vegetables,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.twelve_to_twentyfour_2,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.twelve_to_twentyfour_3,
+        ), HealthInfoElement(
+            type = PARAGRAPH,
+            contentRef = R.string.twelve_to_twentyfour_4,
+        ),
+    )
+
     return listOf(
         HealthInfoPage(
             id = 1,
             image = R.drawable.health_info_general,
             title = R.string.general_information,
-            content = placeholderPage,
+            content = generel_health_info,
         ),
         HealthInfoPage(
             id = 2,
             image = R.drawable.health_info_pregnant,
             title = R.string.pregnant,
-            content = placeholderPage,
+            content = pregnant,
         ),
         HealthInfoPage(
             id = 3,
             image = R.drawable.health_info_0_6_months,
             title = R.string.zero_to_six_months,
-            content = placeholderPage,
+            content = zero_to_six_months,
         ),
         HealthInfoPage(
             id = 4,
             image = R.drawable.health_info_6_9_months,
             title = R.string.six_to_nine_months,
-            content = placeholderPage,
+            content = six_to_nine_months,
         ),
         HealthInfoPage(
             id = 5,
             image = R.drawable.health_info_9_12_months,
             title = R.string.nine_to_twelve_months,
-            content = placeholderPage,
+            content = nine_to_twelve_months,
         ),
         HealthInfoPage(
             id = 6,
             image = R.drawable.health_info_12_24_months,
             title = R.string.twelve_to_twenty_four_months,
-            content = placeholderPage,
+            content = twelve_to_twentyfour_months,
         ),
     )
 }
